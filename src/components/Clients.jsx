@@ -23,10 +23,10 @@ const services = [
 
 export default function Clients() {
   return (
-    <section className="bg-white py-20 px-6 md:px-10 lg:px-20 text-gray-800 border-b border-zinc-600">
+    <section className="bg-white py-20 px-6 md:px-10 lg:px-20 text-gray-800 border-b border-zinc-600" id= 'clients'>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center mb-16">What We Do?</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">Our Clients</h2>
 
         {/* Images Grid */}
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
