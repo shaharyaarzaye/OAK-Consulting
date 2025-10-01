@@ -2,41 +2,65 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <section className="bg-gray-900 py-20 px-6 md:px-10 lg:px-20 text-white" id='contact'>
+    <section className="bg-gray-900 py-24 px-6 md:px-10 lg:px-20 text-white" id='contact'>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
         
-        {/* Left Side: Text and Contact Info */}
+        {/* Left Side: Text, Contact Info, and Map Placeholder */}
         <div className="lg:pr-12">
-          <h2 className="text-5xl font-extrabold tracking-tight mb-6">Let's Connect</h2>
+          {/* Updated CTA Headline */}
+          <h2 className="text-5xl font-extrabold tracking-tight mb-6 text-blue-400">Let’s Build Something Together</h2>
           <p className="text-xl text-gray-300 mb-8 font-light leading-relaxed">
-            Have a project in mind or just want to say hello? We’d love to hear from you. Fill out the form or reach out directly with the details below.
+            Ready to elevate your brand's presence in the Middle East, Africa, and India? Fill out the form or reach out directly with the details below.
           </p>
-          <div className="space-y-4 text-lg">
-            <div className="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="space-y-6 mb-12 text-lg">
+            
+            {/* Address */}
+            <div className="flex items-center space-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span>Dubai, United Arab Emirates</span>
+              <div>
+                <p className="font-semibold text-gray-100">Our Office</p>
+                <p className='text-gray-400 text-base'>Dubai Silicon Oasis, UAE</p>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            
+            {/* Email */}
+            <div className="flex items-center space-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span>contact@oakconsulting.com</span>
+              <div>
+                <p className="font-semibold text-gray-100">Email Us</p>
+                <a href="mailto:contact@oakconsulting.com" className="text-blue-400 hover:text-blue-300 transition text-base">contact@oakconsulting.com</a>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18.5a.5.5 0 01-.5-.5v-4a.5.5 0 011 0v4a.5.5 0 01-.5.5zm0-8a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2a.5.5 0 01.5-.5z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.6 15.6a.5.5 0 01-.35-.15.5.5 0 010-.7l2.8-2.8a.5.5 0 01.7 0 .5.5 0 010 .7l-2.8 2.8a.5.5 0 01-.35.15zM6.4 15.6a.5.5 0 01-.35-.15l-2.8-2.8a.5.5 0 010-.7.5.5 0 01.7 0l2.8 2.8a.5.5 0 010 .7.5.5 0 01-.35.15zM20 12a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2a.5.5 0 01.5.5zM4 12a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2a.5.5 0 01.5.5zM12 21.5a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2a.5.5 0 01.5.5zM12 2.5a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zM17.6 8.4a.5.5 0 01-.35-.15l-2.8-2.8a.5.5 0 010-.7.5.5 0 01.7 0l2.8 2.8a.5.5 0 010 .7.5.5 0 01-.35.15zM6.4 8.4a.5.5 0 01-.35-.15a.5.5 0 010-.7l2.8-2.8a.5.5 0 01.7 0 .5.5 0 010 .7l-2.8 2.8a.5.5 0 01-.35.15z"/>
+            
+            {/* Phone */}
+            <div className="flex items-center space-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span>+971 4 123 4567</span>
+              <div>
+                <p className="font-semibold text-gray-100">Call Us</p>
+                <a href="tel:+97141234567" className="text-gray-400 hover:text-gray-300 transition text-base">+971 4 123 4567</a>
+              </div>
+            </div>
+
+          </div>
+          
+          {/* Office Map Placeholder */}
+          <div className="aspect-video bg-gray-800 rounded-xl overflow-hidden mt-8 shadow-inner">
+            <div className="flex items-center justify-center h-full text-gray-500 italic">
+              [Map Component Placeholder]
             </div>
           </div>
         </div>
 
         {/* Right Side: Form */}
         <div className="bg-gray-800 p-8 md:p-12 rounded-3xl shadow-xl border border-gray-700">
+          <h3 className="text-3xl font-bold mb-8 text-blue-400">Send Us a Message</h3>
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             
             {/* Name Fields */}
@@ -50,8 +74,8 @@ export default function Contact() {
                   id="firstName"
                   name="firstName"
                   required
-                  placeholder="First"
-                  className="w-full rounded-md bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
+                  placeholder="John"
+                  className="w-full rounded-lg bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
                 />
               </div>
               <div>
@@ -63,8 +87,8 @@ export default function Contact() {
                   id="lastName"
                   name="lastName"
                   required
-                  placeholder="Last"
-                  className="w-full rounded-md bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
+                  placeholder="Doe"
+                  className="w-full rounded-lg bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
                 />
               </div>
             </div>
@@ -72,30 +96,30 @@ export default function Contact() {
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                Email <span className="text-red-400">*</span>
+                Work Email <span className="text-red-400">*</span>
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                placeholder="Email"
-                className="w-full rounded-md bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
+                placeholder="you@company.com"
+                className="w-full rounded-lg bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
               />
             </div>
 
             {/* Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                Message <span className="text-red-400">*</span>
+                How Can We Help? <span className="text-red-400">*</span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows="5"
                 required
-                placeholder="Your message here..."
-                className="w-full rounded-md bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition resize-none"
+                placeholder="Tell us about your project..."
+                className="w-full rounded-lg bg-gray-700 text-white border border-gray-600 px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none transition resize-none"
               ></textarea>
             </div>
 
@@ -103,7 +127,7 @@ export default function Contact() {
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300"
+                className="w-full inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-[1.01]"
               >
                 Send Message
               </button>

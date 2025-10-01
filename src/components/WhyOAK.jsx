@@ -1,74 +1,118 @@
 import React from 'react';
+import { Award, Globe, Users, Clock, Quote } from 'lucide-react';
 
-// Reusable data for the benefits
-const benefits = [
-  { id: 1, title: 'Increased Visibility', description: 'Your brand’s visibility and online presence will thrive, reaching a wider audience.', icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-      </svg>
-    ),
-  },
-  { id: 2, title: 'Positive Reputation', description: 'Cultivating a sustained, positive business reputation that builds trust with your audience.', icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 3h4M3 21h4M5 21v-4M21 3h-4M21 5v-4M21 21h-4M21 19v4" />
-      </svg>
-    ),
-  },
-  { id: 3, title: 'Enhanced Credibility', description: 'We increase brand credibility by showcasing your expertise and thought leadership.', icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.047zm0 0c1.889 4.397 5.08 6.45 8.618 6.953m0 0a2.03 2.03 0 002.59-1.932" />
-      </svg>
-    ),
-  },
-  { id: 4, title: 'New Opportunities', description: 'Growing business opportunities and boosting sales by attracting the right customers.', icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-2.485 0-4.5 2.015-4.5 4.5S9.515 17 12 17s4.5-2.015 4.5-4.5S14.485 8 12 8z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 19.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" />
-      </svg>
-    ),
-  },
+// Defines the USPs (stats)
+const usps = [
+    { 
+        id: 1, 
+        stat: '20+', 
+        label: 'Years of Strategic PR Experience', 
+        icon: Clock, 
+        description: 'Decades of deep market understanding mean proven success.' 
+    },
+    { 
+        id: 2, 
+        stat: '3', 
+        label: 'Global Hubs (MEA & India)', 
+        icon: Globe, 
+        description: 'Extensive regional and global reach where your audience lives.' 
+    },
+    { 
+        id: 3, 
+        stat: '500+', 
+        label: 'Strong Media Network Contacts', 
+        icon: Users, 
+        description: 'Unparalleled access to top-tier journalists and publications.' 
+    },
+    { 
+        id: 4, 
+        stat: '10+', 
+        label: 'Award-Winning Campaigns', 
+        icon: Award, 
+        description: 'Recognition for innovative strategy and measurable results.' 
+    },
 ];
 
+// Mock Testimonial for social proof
+const testimonial = {
+    quote: "OAK Consulting transformed our regional presence. Their media network and strategic guidance are truly unmatched in the Middle East.",
+    client: "CFO, Global Tech Leader"
+}
+
 export default function WhyOAK() {
-  return (
-    <section className="bg-gray-50 py-20 px-6 md:px-10 lg:px-20 text-gray-800" id='whyoak'>
-      <div className="max-w-7xl mx-auto">
-        {/* Main Heading & Subheading */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-gray-900 tracking-tight">Why Partner with OAK?</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            We bring measurable value and a strategic advantage to your brand.
-          </p>
-        </div>
+    return (
+        // Dark theme to provide contrast and return to the primary brand color scheme
+        <section className="bg-zinc-900 py-24 px-6 md:px-10 lg:px-20 text-white" id='whyoak'>
+            <div className="max-w-7xl mx-auto">
+                
+                {/* Main Heading & Subheading */}
+                <div className="text-center mb-16">
+                    <p className="text-sm font-medium uppercase text-blue-400 tracking-widest mb-2">Our Competitive Edge</p>
+                    <h2 className="text-5xl font-extrabold text-white tracking-tight">Why Partner with OAK?</h2>
+                    <p className="mt-4 text-xl text-zinc-400 max-w-3xl mx-auto font-light">
+                        We don't just execute; we strategize, innovate, and deliver measurable impact that fundamentally changes how the market perceives your brand.
+                    </p>
+                </div>
 
-        {/* Benefits Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {benefits.map(({ id, title, description, icon }) => (
-            <div key={id} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 transition-transform duration-300 hover:scale-105">
-              <div className="mb-4">
-                {icon}
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-              <p className="text-gray-600">{description}</p>
+                {/* Split Layout: Left (Text) and Right (USPs/Stats & Testimonial) */}
+                <div className="grid lg:grid-cols-3 gap-16 items-start">
+                    
+                    {/* LEFT COLUMN: Main Text & Commitment (2/3 width on large screens) */}
+                    <div className="lg:col-span-2 space-y-8">
+                        <p className="text-lg leading-relaxed text-zinc-300">
+                            Our methodology is built on a foundation of **deep market specialization** and a proactive, ownership-driven approach. Unlike larger, generalist agencies, OAK Consulting provides senior-level commitment to every account, ensuring agility, cultural relevance, and immediate decision-making power. We are a team of entrepreneurs dedicated to your narrative.
+                        </p>
+                        <p className="text-lg leading-relaxed text-zinc-300 border-l-4 border-blue-500 pl-4">
+                            We leverage our **extensive knowledge of the Middle East, Africa, and India markets** to align effective communication strategies with your brand’s unique marketing requirements. Our methodical work processes and deep media relationships are your strategic advantage.
+                        </p>
+                        
+                        {/* Final CTA in the main content area */}
+                        <a 
+                            href="#contact-us"
+                            className="inline-flex items-center mt-4 bg-blue-600 text-white px-8 py-3 
+                                rounded-full text-lg font-semibold shadow-lg shadow-blue-500/50 
+                                hover:bg-blue-700 transition duration-300"
+                        >
+                            Start the Conversation
+                        </a>
+                    </div>
+                    
+                    {/* RIGHT COLUMN: USPs & Testimonial (1/3 width on large screens) */}
+                    <div className="lg:col-span-1 space-y-10">
+
+                        {/* USP Grid (Stats) */}
+                        <div className="grid grid-cols-2 gap-6 p-6 rounded-xl bg-zinc-800 shadow-xl border border-zinc-700">
+                            {usps.map(({ id, stat, label, icon: Icon, description }) => (
+                                <div key={id} className="text-center">
+                                    <Icon className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                                    <p className="text-3xl font-extrabold text-white">{stat}</p>
+                                    <p className="text-sm text-zinc-400 font-medium leading-snug mt-1">{label}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+                <div className="grid lg:grid-cols-3 gap-16 items-start mt-15">
+                    
+                    {/* LEFT COLUMN: Main Text & Commitment (2/3 width on large screens) */}
+                  
+                    
+                    {/* RIGHT COLUMN: USPs & Testimonial (1/3 width on large screens) */}
+                    <div className="lg:col-span-3 space-y-10">
+
+                        {/* Client Testimonial Card */}
+                        <div className="p-6 rounded-xl bg-zinc-800 shadow-2xl border-l-4 border-blue-500 md:col-span-3">
+                            <Quote className="w-6 h-6 text-blue-500 mb-3" />
+                            <p className="text-lg italic text-white mb-3 leading-relaxed">
+                                "{testimonial.quote}"
+                            </p>
+                            <p className="text-sm font-semibold text-zinc-400">— {testimonial.client}</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          ))}
-        </div>
-
-        {/* Our Commitment Section - Reimagined */}
-        <div className="relative overflow-hidden bg-blue-600 text-white p-12 rounded-3xl shadow-2xl">
-          <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'linear-gradient(to top right, #3b82f6, #1d4ed8)' }}></div>
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-extrabold tracking-tight mb-4">Our Commitment</h3>
-            <p className="text-lg font-light leading-relaxed mb-6">
-              We leverage our extensive knowledge of the Middle East, Africa, and India markets to align effective communication strategies with your brand’s unique marketing requirements. Our proactive attitude, methodical work processes, and flexibility ensure your success.
-            </p>
-            <p className="text-sm font-semibold text-blue-200">
-              * Leveraging our excellent relationships with media and publishing houses is a key part of our service.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
