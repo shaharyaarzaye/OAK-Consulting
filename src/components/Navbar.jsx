@@ -23,20 +23,21 @@ const Header = () => {
     }, []);
 
     const menuItems = [
+        { name: 'About Us', href: '#aboutus' },
         { name: 'Who We Are', href: '#whoweare' },
-        { name: 'Our Roots', href: '#ourroots' },
-        { name: 'Our Team', href: '#ourteam' },
-        { name: 'What we do', href: '#whatwedo' },
         { name: 'Why OAK?', href: '#whyoak' },
+        { name: 'What we do', href: '#whatwedo' },
         { name: 'Our Clients', href: '#clients' },
-        { name: 'Testimonials', href: '#testimonials' },
+        { name: 'Our Team', href: '#ourteam' },
+        // { name: 'Our Roots', href: '#ourroots' },
+        // { name: 'Testimonials', href: '#testimonials' },
         { name: 'Awards', href: '#recognition' },
         { name: 'Contact Us', href: '#contact' },
     ];
 
     return (
-        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-neutral-900/90 shadow-lg' : 'bg-transparent'}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+        <header className={`w-full z-50 border-b transition-all duration-300 ${isScrolled ? 'bg-neutral-900/90 shadow-lg' : 'bg-white'}`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
                 <a href="/" className="flex-shrink-0">
                     <img src="logo.jpg" alt="Logo" className="h-10 w-auto rounded-full" />
@@ -44,7 +45,7 @@ const Header = () => {
 
                 {/* Hamburger */}
                 <button
-                    className="lg:hidden p-2 text-white z-50"
+                    className="lg:hidden p-2 text-black z-50"
                     aria-label="Toggle menu"
                     onClick={toggleMenu}
                 >
@@ -73,7 +74,7 @@ const Header = () => {
                                     <a
                                         href={item.href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-white text-sm font-medium hover:text-gray-300 transition"
+                                        className="text-black text-sm font-medium hover:text-zinc-700 transition"
                                     >
                                         {item.name}
                                     </a>
@@ -85,7 +86,7 @@ const Header = () => {
                     {/* CTA */}
                     <a
                         href="#brief"
-                        className="px-5 py-2 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-neutral-900 transition whitespace-nowrap"
+                        className="px-5 py-2 border border-black bg-black text-white font-semibold rounded-full hover:bg-white hover:text-zinc-950 transition whitespace-nowrap"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Let's Talk / Get in Touch
