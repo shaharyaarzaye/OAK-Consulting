@@ -90,7 +90,7 @@ const ImageMatchFooter = () => {
             </h2>
 
             {/* Contact Information */}
-            <div className="grid grid-cols-3">
+            <div className="md:grid grid-cols-3">
               <div className="col-span-1">
                 <div className="space-y-4 text-sm mb-8 text-gray-400">
                   <div>

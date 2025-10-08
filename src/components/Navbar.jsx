@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -23,25 +23,25 @@ const Header = () => {
     }, []);
 
     const menuItems = [
-        { name: 'About Us', href: '#aboutus' },
-        { name: 'Who We Are', href: '#whoweare' },
-        { name: 'Why OAK?', href: '#whyoak' },
-        { name: 'What we do', href: '#whatwedo' },
-        { name: 'Our Clients', href: '#clients' },
-        { name: 'Our Team', href: '#ourteam' },
+        { name: 'About Us', href: 'about' },
+        { name: 'Who We Are', href: 'whoweare' },
+        { name: 'Why OAK?', href: 'whyoak' },
+        { name: 'What we do', href: 'whatwedo' },
+        { name: 'Our Clients', href: 'clients' },
+        { name: 'Our Team', href: 'ourteam' },
         // { name: 'Our Roots', href: '#ourroots' },
         // { name: 'Testimonials', href: '#testimonials' },
-        { name: 'Awards', href: '#recognition' },
-        { name: 'Contact Us', href: '#contact' },
+        { name: 'Awards', href: 'recognition' },
+        { name: 'Contact Us', href: 'contact' },
     ];
 
     return (
         <header className={`w-full z-50 border-b transition-all duration-300 ${isScrolled ? 'bg-neutral-900/90 shadow-lg' : 'bg-white'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
-                <a href="/" className="flex-shrink-0">
+                <Link href="/" className="flex-shrink-0">
                     <img src="logo.jpg" alt="Logo" className="h-10 w-auto rounded-full" />
-                </a>
+                </Link>
 
                 {/* Hamburger */}
                 <button
@@ -71,13 +71,13 @@ const Header = () => {
                         <ul className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-5">
                             {menuItems.map(item => (
                                 <li key={item.name}>
-                                    <a
-                                        href={item.href}
+                                    <Link
+                                        to={item.href}
                                         onClick={() => setIsMenuOpen(false)}
                                         className="text-black text-sm font-medium hover:text-zinc-700 transition"
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
