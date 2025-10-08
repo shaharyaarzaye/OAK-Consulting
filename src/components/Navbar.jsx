@@ -57,7 +57,7 @@ const Header = () => {
 
                 {/* Hamburger Button (Conditional color is already correct) */}
                 <button
-                    className={`lg:hidden p-2 z-[60] transition-colors duration-300 ${isScrolled ? 'text-white' : 'md:text-black text-white'}`}
+                    className={`lg:hidden p-2 z-[60] transition-colors duration-300 ${isScrolled ? 'text-white' : 'text-black'}`}
                     aria-label="Toggle menu"
                     onClick={toggleMenu}
                 >
