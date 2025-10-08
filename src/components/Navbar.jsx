@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Toggle mobile menu
+    // Toggle mobile menu and body overflow
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-        document.body.classList.toggle('overflow-hidden', !isMenuOpen);
+        const newState = !isMenuOpen;
+        setIsMenuOpen(newState);
+        document.body.classList.toggle('overflow-hidden', newState);
     };
 
-    // Close menu on scroll (optional)
+    // Handle scroll event for header styling
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -29,23 +31,33 @@ const Header = () => {
         { name: 'What we do', href: 'whatwedo' },
         { name: 'Our Clients', href: 'clients' },
         { name: 'Our Team', href: 'ourteam' },
-        // { name: 'Our Roots', href: '#ourroots' },
-        // { name: 'Testimonials', href: '#testimonials' },
         { name: 'Awards', href: 'recognition' },
         { name: 'Contact Us', href: 'contact' },
     ];
 
+    // Close menu and cleanup body class
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+        document.body.classList.remove('overflow-hidden');
+    };
+
+    // Determine the base text color for desktop navigation
+    // It's white when scrolled (dark background) and black when not scrolled (white background)
+    const navTextColor = isScrolled ? 'text-white' : 'text-black';
+    // Determine the hover color for desktop
+    const navTextHover = isScrolled ? 'hover:text-zinc-400' : 'hover:text-zinc-700';
+
     return (
-        <header className={`w-full z-50 border-b transition-all duration-300 ${isScrolled ? 'bg-neutral-900/90 shadow-lg' : 'bg-white'}`}>
+        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-neutral-900/90 shadow-lg border-neutral-700' : 'bg-white border-b border-neutral-200'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
-                <Link href="/" className="flex-shrink-0">
+                <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
                     <img src="logo.jpg" alt="Logo" className="h-10 w-auto rounded-full" />
                 </Link>
 
-                {/* Hamburger */}
+                {/* Hamburger Button (Conditional color is already correct) */}
                 <button
-                    className="lg:hidden p-2 text-black z-50"
+                    className={`lg:hidden p-2 z-[60] transition-colors duration-300 ${isScrolled ? 'text-white' : 'md:text-black text-white'}`}
                     aria-label="Toggle menu"
                     onClick={toggleMenu}
                 >
@@ -59,22 +71,25 @@ const Header = () => {
                     </svg>
                 </button>
 
-                {/* Nav + CTA */}
+                {/* Nav + CTA Container */}
                 <div
                     className={`
-                        fixed inset-0 bg-neutral-900/95 flex flex-col items-center justify-center space-y-6 transition-transform duration-300
-                        lg:static lg:flex lg:flex-row lg:space-y-0 lg:space-x-6 lg:bg-transparent lg:translate-x-0
-                        ${isMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+                        fixed inset-0 bg-neutral-900/95 flex flex-col items-center justify-center space-y-8 transition-transform duration-300 h-screen
+                        lg:static lg:flex lg:flex-row lg:space-y-0 lg:space-x-6 lg:bg-transparent lg:translate-x-0 lg:h-auto
+                        ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}
                     `}
                 >
                     <nav>
-                        <ul className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-5">
+                        <ul className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-5">
                             {menuItems.map(item => (
                                 <li key={item.name}>
                                     <Link
                                         to={item.href}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="text-black text-sm font-medium hover:text-zinc-700 transition"
+                                        onClick={closeMenu}
+                                        // 💡 THE CRITICAL FIX: Base text is white (for mobile menu). 
+                                        // On LG screens, it uses the SCROLLED-DETERMINED color.
+                                        className={` text-lg font-medium transition 
+                                                  lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-zinc-950 text-white"}`} 
                                     >
                                         {item.name}
                                     </Link>
@@ -82,12 +97,19 @@ const Header = () => {
                             ))}
                         </ul>
                     </nav>
-
-                    {/* CTA */}
+                    
+                    {/* CTA (Ensures white text/border on dark mobile BG, and black on dark scrolled desktop BG) */}
                     <a
                         href="#brief"
-                        className="px-5 py-2 border border-black bg-black text-white font-semibold rounded-full hover:bg-white hover:text-zinc-950 transition whitespace-nowrap"
-                        onClick={() => setIsMenuOpen(false)}
+                        className={`
+                            px-6 py-3 border text-lg font-semibold rounded-full transition whitespace-nowrap
+                            text-white border-white hover:bg-white hover:text-zinc-950 
+                            lg:px-5 lg:py-2 lg:text-sm 
+                            ${isScrolled 
+                                ? 'lg:border-white lg:bg-transparent lg:text-white lg:hover:bg-white lg:hover:text-zinc-950' 
+                                : 'lg:border-black lg:bg-black lg:text-white lg:hover:bg-white lg:hover:text-zinc-950'}
+                        `}
+                        onClick={closeMenu}
                     >
                         Let's Talk / Get in Touch
                     </a>
