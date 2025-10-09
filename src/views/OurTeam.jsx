@@ -24,7 +24,7 @@ export default function OurTeam() {
 
         {/* Option 2: Background Image (if no video, or as a fallback) */}
         <img 
-                    src="public/dummy.png" // Replace with your desired hero image
+                    src="dummy.png" // Replace with your desired hero image
                     alt="Oak Consulting Hero" 
                     className='absolute inset-0 h-full w-full object-cover'
                 />
