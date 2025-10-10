@@ -13,6 +13,8 @@ import WhyOAK from './views/WhyOAK'
 import Awards from './views/Awards'
 import Footer from './components/Footer';
 
+// 💥 IMPORT THE NEW COMPONENT HERE
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'; 
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
           <Route path="/whyoak" element={<WhyOAK />} />
           <Route path="/recognition" element={<Awards />} />
         </Routes>
+        
+        {/* 💥 ADD THE FLOATING BUTTON COMPONENT HERE */}
+        <WhatsAppFloatingButton /> 
+        
         <Footer />
       </div>
     </Router>
