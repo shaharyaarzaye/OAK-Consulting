@@ -4,58 +4,53 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    // Toggle mobile menu and body overflow
     const toggleMenu = () => {
         const newState = !isMenuOpen;
         setIsMenuOpen(newState);
         document.body.classList.toggle('overflow-hidden', newState);
     };
 
-    // Handle scroll event for header styling
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
-
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const menuItems = [
         { name: 'About Us', href: 'about' },
         { name: 'Who We Are', href: 'whoweare' },
-        { name: 'Why OAK?', href: 'whyoak' },
-        { name: 'What we do', href: 'whatwedo' },
-        { name: 'Our Clients', href: 'clients' },
-        { name: 'Our Team', href: 'ourteam' },
-        { name: 'Awards', href: 'recognition' },
-        { name: 'Contact Us', href: 'contact' },
+        {
+            name: 'What we do',
+            href: 'whatwedo',
+            dropdown: [
+                { name: 'What we do?', href: 'whatwedo' },
+                { name: 'Why OAK?', href: 'whatwedo' }
+            ]
+        }
     ];
 
-    // Close menu and cleanup body class
     const closeMenu = () => {
         setIsMenuOpen(false);
         document.body.classList.remove('overflow-hidden');
+        setDropdownOpen(false);
     };
 
-    // Determine the base text color for desktop navigation
-    // It's white when scrolled (dark background) and black when not scrolled (white background)
     const navTextColor = isScrolled ? 'text-white' : 'text-black';
-    // Determine the hover color for desktop
-    const navTextHover = isScrolled ? 'hover:text-zinc-400' : 'hover:text-zinc-700';
+    const navTextHover = isScrolled ? 'hover:text-zinc-300' : 'hover:text-zinc-700';
 
     return (
-        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-neutral-900/90 shadow-lg border-neutral-700' : 'bg-white border-b border-neutral-200'}`}>
+        <header className="absolute top-0 w-full z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
                 <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
                     <img src="logo.jpg" alt="Logo" className="h-10 w-auto rounded-full" />
                 </Link>
 
-                {/* Hamburger Button (Conditional color is already correct) */}
+                {/* Hamburger */}
                 <button
                     className={`lg:hidden p-2 z-[60] transition-colors duration-300 ${isScrolled ? 'text-white' : 'text-black'}`}
                     aria-label="Toggle menu"
@@ -71,7 +66,7 @@ const Header = () => {
                     </svg>
                 </button>
 
-                {/* Nav + CTA Container */}
+                {/* Nav */}
                 <div
                     className={`
                         fixed inset-0 bg-neutral-900/95 flex flex-col items-center justify-center space-y-8 transition-transform duration-300 h-screen
@@ -82,25 +77,70 @@ const Header = () => {
                     <nav>
                         <ul className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-5">
                             {menuItems.map(item => (
-                                <li key={item.name}>
-                                    <Link
-                                        to={item.href}
-                                        onClick={closeMenu}
-                                        // 💡 THE CRITICAL FIX: Base text is white (for mobile menu). 
-                                        // On LG screens, it uses the SCROLLED-DETERMINED color.
-                                        className={` text-lg font-medium transition 
-                                                  lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-zinc-950 text-white"}`} 
-                                    >
-                                        {item.name}
-                                    </Link>
+                                <li key={item.name} className="relative group">
+                                    {!item.dropdown ? (
+                                        <Link
+                                            to={item.href}
+                                            onClick={closeMenu}
+                                            className={`text-lg font-medium transition lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-zinc-950 text-white"}`}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ) : (
+                                        <>
+                                            {/* Dropdown Parent */}
+                                            <button
+                                                className={`text-lg font-medium transition lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-zinc-950 text-white"} flex items-center`}
+                                                onClick={() => setDropdownOpen(!dropdownOpen)}
+                                            >
+                                                {item.name}
+                                                <svg
+                                                    className={`w-4 h-4 ml-1 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            </button>
+
+                                            {/* Dropdown Items */}
+                                            <ul
+                                                className={`
+                                                    ${dropdownOpen ? 'flex' : 'hidden'}
+                                                    flex-col lg:absolute lg:top-full lg:left-0
+                                                    lg:bg-white lg:shadow-lg lg:rounded-lg lg:py-2
+                                                    mt-3 lg:mt-2 transition-all duration-200
+                                                    w-full lg:min-w-[120px]
+                                                `}
+                                            >
+                                                {item.dropdown.map(subItem => (
+                                                    <li key={subItem.name} className="w-full">
+                                                        <Link
+                                                            to={subItem.href}
+                                                            onClick={closeMenu}
+                                                            className={`
+                                                                block w-full text-center lg:text-left px-5 py-2 text-sm font-medium 
+                                                                ${isScrolled ? 'text-white md:text-zinc-900' : 'text-white  md:text-zinc-800'} 
+                                                                hover:bg-zinc-100 lg:hover:bg-zinc-200 
+                                                                transition-colors duration-150
+                                                            `}
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </>
+                                    )}
                                 </li>
                             ))}
                         </ul>
                     </nav>
-                    
-                    {/* CTA (Ensures white text/border on dark mobile BG, and black on dark scrolled desktop BG) */}
-                    <a
-                        href="#brief"
+
+                    {/* CTA */}
+                    <Link
+                        to="getintouch"
                         className={`
                             px-6 py-3 border text-lg font-semibold rounded-full transition whitespace-nowrap
                             text-white border-white hover:bg-white hover:text-zinc-950 
@@ -112,7 +152,7 @@ const Header = () => {
                         onClick={closeMenu}
                     >
                         Let's Talk / Get in Touch
-                    </a>
+                    </Link>
                 </div>
             </div>
         </header>

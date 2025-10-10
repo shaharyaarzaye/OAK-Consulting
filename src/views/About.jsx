@@ -79,7 +79,7 @@ export default function About() {
                     </div> */}
         </div>
       </div>
-      <div className="text-2xl md:text-3xl text-center md:px-25 px-10 mt-5 py-15 ">
+      <div className="text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5 py-15 ">
         With decades of PR experience spanning the Middle East, India, Africa,
         and beyond, we have built a proven track record of delivering impactful
         communications strategies for a diverse range of clients. Our growth has

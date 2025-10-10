@@ -8,7 +8,7 @@ import Whatwedo from './views/Whatwedo';
 import Whoweare from './views/Whoweare';
 import OurClients from './views/OurClients';
 import OurTeam from './views/OurTeam'
-import ContactUs from './views/ContactUs'
+import GetInTouch from './views/GetInTouch'
 import WhyOAK from './views/WhyOAK'
 import Awards from './views/Awards'
 import Footer from './components/Footer';
@@ -27,7 +27,7 @@ function App() {
           <Route path="/whatwedo" element={<Whatwedo />} />
           <Route path="/clients" element={<OurClients />} />
           <Route path="/ourteam" element={<OurTeam />} />
-          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/getintouch" element={<GetInTouch />} />
           <Route path="/whyoak" element={<WhyOAK />} />
           <Route path="/recognition" element={<Awards />} />
         </Routes>
