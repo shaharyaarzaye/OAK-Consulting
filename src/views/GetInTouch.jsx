@@ -33,8 +33,8 @@ function GetInTouch() {
     <div className="bg-gray-50">
       {/* Hero Section with Background Image */}
       <div
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2874&auto=format&fit=crop')" }}
+        className="relative h-screen bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: "url('Contact_us.JPG')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative text-center text-white px-4">

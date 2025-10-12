@@ -1,5 +1,31 @@
 import React from "react";
 
+
+
+  const flagData = [
+    { name: "Bahrain", src: "Bahrain.jpg" },
+    { name: "Egypt", src: "Egypt.jpg" },
+    { name: "India", src: "India.jpg" },
+    { name: "Kuwait", src: "Kuwait.jpg" },
+    { name: "Morocco", src: "Morocco.jpg" },
+    { name: "Oman", src: "Oman.jpg" },
+    { name: "Qatar", src: "qatar.jpg" },
+    { name: "Saudi Arabia", src: "Saudi Arabia.jpg" },
+    { name: "Turkey", src: "Turkey.jpg" },
+    { name: "UAE", src: "UAE.jpg" },
+  ];
+  const servicesdata = [
+    { name: "Community Management", src: "Community Management.JPG" },
+    { name: "Content Strategy & Creation", src: "Content Strategy & Creation.JPG" },
+    { name: "Crisis & Issues Management", src: "Crisis & Issues Management.JPG" },
+    { name: "Influencer Marketing", src: "Influencer Marketing.JPG" },
+    { name: "Media Management.JPG", src: "Media Management.JPG" },
+    { name: "Media Training", src: "Media Training.JPG" },
+    { name: "Product Launches", src: "Product Launches.JPG" },
+    { name: "Strategic Consultation", src: "Strategic Consultation.JPG" }
+  ];
+
+
 export default function WhatWeDo() {
   return (
     <div>
@@ -7,7 +33,7 @@ export default function WhatWeDo() {
       <div className="relative h-screen overflow-hidden">
         {/* Background Image */}
         <img
-          src="/dummy.png" // Update path to be relative to public folder
+          src="/Why_OAK.jpg" // Update path to be relative to public folder
           alt="Oak Consulting Hero"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -20,14 +46,14 @@ export default function WhatWeDo() {
           <h1
             className="
               text-white 
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+              text-3xl sm:text-4xl md:text-5xl lg:text-4xl 
               font-extrabold 
               leading-tight 
               mb-6 max-w-4xl
             "
           >
-            We don’t just manage communications, we craft experiences, shape
-            perceptions, and deliver results that matter.
+            We don’t just manage communications.<br /> we craft experiences.<br /> shape
+            perceptions.<br /> and deliver results that matter.
           </h1>
         </div>
       </div>
@@ -40,13 +66,18 @@ export default function WhatWeDo() {
       {/* --- */}
 
       {/* Grid Section (No change) */}
-      <div className="container mx-auto px-10 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {[...Array(8)].map((_, index) => (
-            <div
+      <div className="flex justify-evenly items-center gap-30 px-10 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {servicesdata.map((img, index) => (
+            <div className="flex flex-col">
+            <img
               key={index}
-              className="bg-zinc-800 h-40 rounded-lg transition-transform hover:scale-105"
+              src={`services/${img.src}`} // Ensure these images are in the public folder
+              className="bg-zinc-800 h-full w-full rounded-lg transition-transform hover:scale-105"
             />
+            <h1 className="mt-3 bg-black/15">{img.name}</h1>
+            </div>
+            
           ))}
         </div>
       </div>
@@ -103,6 +134,25 @@ export default function WhatWeDo() {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+            {/* === MOVING FLAGS SECTION === */}
+      <div className="relative w-full overflow-hidden border-b border-gray-300 bg-white py-10">
+        <h2 className="text-3xl font-bold text-center mb-6">Our reach</h2>
+        <div className="flex animate-scroll space-x-10">
+          {[...flagData, ...flagData].map((flag, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <img
+                // ✅ FIX: Prepended a path. Assumes flags are in a subfolder named 'flags' in 'public'
+                // If they are directly in 'public', use src={`/${flag.src}`}
+                src={`/flags/${flag.src}`}
+                alt={flag.name}
+                className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300"
+                // Added 'grayscale' class by default so hover effect works
+              />
+              <p className="text-sm text-gray-600 mt-2">{flag.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

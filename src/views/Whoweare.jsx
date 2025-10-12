@@ -1,12 +1,19 @@
-import React from 'react'
+
+
+  const team = [
+    { name: "Emily Roberts", role: "Founder & CEO", image: "team1.jpg" },
+    { name: "Daniel Thompson", role: "Creative Director", image: "team2.jpg" },
+    { name: "Priya Nair", role: "PR & Communications Lead", image: "team3.jpg" },
+    { name: "James Lee", role: "Digital Marketing Strategist", image: "team4.jpg" },
+  ];
 
 export default function Whoweare() {
   return (
-      <div className="bg-gray-50">
+      <div className="bg-white">
       {/* Hero Section with Background Image */}
       <div
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('dummy.png')" }}
+        className="relative h-screen bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: "url('Who_we_are.JPG')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative text-center text-white px-4">
@@ -79,6 +86,26 @@ export default function Whoweare() {
             FLAGS - In motion
           </p>
         </div>
+           {/* === TEAM SECTION === */}
+      <div className="bg-white py-16  px-6 md:px-20">
+        <h2 className="text-4xl font-bold text-center mb-10">Our Team</h2>
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8">
+          {team.map((member, index) => (
+            <div
+              key={index}
+              className="text-center group hover:-translate-y-2 transform transition duration-300"
+            >
+              <img
+                src={`/team/${member.image}`}
+                alt={member.name}
+                className="w-40 h-40 rounded-full mx-auto object-cover mb-4 shadow-md group-hover:shadow-xl transition duration-300"
+              />
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
       </div>
       
     </div>

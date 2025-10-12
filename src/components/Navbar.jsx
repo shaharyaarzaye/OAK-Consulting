@@ -24,7 +24,7 @@ const Header = () => {
         { name: 'About Us', href: 'about' },
         { name: 'Who We Are', href: 'whoweare' },
         {
-            name: 'What we do',
+            name: 'Our Services',
             href: 'whatwedo',
             dropdown: [
                 { name: 'What we do?', href: 'whatwedo' },
@@ -47,7 +47,7 @@ const Header = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
                 <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
-                    <img src="logo.jpg" alt="Logo" className="h-10 w-auto rounded-full" />
+                    <img src="logo.jpg" alt="Logo" className="h-15 w-auto " />
                 </Link>
 
                 {/* Hamburger */}

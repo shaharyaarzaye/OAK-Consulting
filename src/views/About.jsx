@@ -21,14 +21,13 @@ export default function About() {
                 */}
 
         {/* Option 2: Background Image (if no video, or as a fallback) */}
-        {/* <img 
-                    src="hero.png" // Replace with your desired hero image
+        <img 
+                    src="About_us.JPG" // Replace with your desired hero image
                     alt="Oak Consulting Hero" 
                     className='absolute inset-0 h-full w-full object-cover'
-                /> */}
+                />
 
         {/* Overlay for Darkening/Grayscale and Contrast */}
-        <div className="absolute inset-0 bg-white text-black "></div>
 
         {/* Content Container: Headlines and CTAs */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-10">
