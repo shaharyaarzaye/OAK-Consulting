@@ -40,7 +40,7 @@ const Header = () => {
     };
 
     const navTextColor = isScrolled ? 'text-white' : 'text-orange';
-    const navTextHover = isScrolled ? 'hover:text-[#fe6700]' : 'hover:text-[#fe6700]';
+    const navTextHover = isScrolled ? 'hover:text-zinc-100' : 'hover:text-zinc-200';
 
     return (
         <header className="absolute top-0 w-full z-50 transition-all duration-300">
@@ -82,7 +82,7 @@ const Header = () => {
                                         <Link
                                             to={item.href}
                                             onClick={closeMenu}
-                                            className={`text-lg font-medium transition lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-zinc-950 text-white"}`}
+                                            className={`text-lg font-medium transition lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-[#fe6700] text-white"}`}
                                         >
                                             {item.name}
                                         </Link>
@@ -90,7 +90,7 @@ const Header = () => {
                                         <>
                                             {/* Dropdown Parent */}
                                             <button
-                                                className={`text-lg font-medium transition lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-zinc-950 text-white"} flex items-center`}
+                                                className={`text-lg font-medium transition lg:text-sm ${navTextColor} ${navTextHover} ${isScrolled ? "text-white" : "md:text-[#fe6700] text-white"} flex items-center`}
                                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                                             >
                                                 {item.name}
@@ -121,7 +121,7 @@ const Header = () => {
                                                             onClick={closeMenu}
                                                             className={`
                                                                 block w-full text-center lg:text-left px-5 py-2 text-sm font-medium 
-                                                                ${isScrolled ? 'text-white md:text-zinc-900' : 'text-white  md:text-zinc-800'} 
+                                                                ${isScrolled ? 'text-white md:text-zinc-900' : 'text-white  md:text-[#fe6700]'} 
                                                                 hover:bg-zinc-100 lg:hover:bg-zinc-200 
                                                                 transition-colors duration-150
                                                             `}

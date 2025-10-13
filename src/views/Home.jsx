@@ -58,7 +58,7 @@ function Home() {
         {/* For image, ensure the <img> tag has the correct src */}
 
         {/* Option 1: Background Video */}
-        {/*
+        
                 <video 
                     autoPlay 
                     loop 
@@ -66,24 +66,24 @@ function Home() {
                     playsInline 
                     className='absolute inset-0 h-full w-full object-cover'
                 >
-                    <source src="/path-to-your-events-video.mp4" type="video/mp4" />
+                    <source src="home_video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                */}
+               
 
         {/* Option 2: Background Image (if no video, or as a fallback) */}
-        <img 
+        {/* <img 
                     src="home.JPG" // Replace with your desired hero image
                     alt="Oak Consulting Hero" 
                     className='absolute inset-0 h-full w-full object-cover'
-                />
+                /> */}
 
         {/* Overlay for Darkening/Grayscale and Contrast */}
 
         {/* Content Container: Headlines and CTAs */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-10">
           {/* Main Headline */}
-          <div className="relative text-center text-white px-4">
+          <div className="relative text-center text-black px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             Shaping Stories. Building Brands
           </h1>
@@ -209,12 +209,12 @@ function Home() {
               key={index}
               className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition duration-300"
             >
-              <img
+              {/* <img
                 // Path looks correct: /testimonials/ is assumed to be in the public folder
                 src={`/testimonials/${t.image}`}
                 alt={t.name}
                 className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
-              />
+              /> */}
               <p className="text-gray-700 italic mb-3">"{t.text}"</p>
               <h4 className="font-bold text-lg">{t.name}</h4>
               <p className="text-sm text-gray-500">{t.company}</p>
