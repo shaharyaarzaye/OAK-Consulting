@@ -64,7 +64,7 @@ function Home() {
                     loop 
                     muted 
                     playsInline 
-                    className='absolute inset-0 h-full w-full object-cover'
+                    className='absolute inset-0 h-full w-full object-cover  '
                 >
                     <source src="home_video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -83,7 +83,7 @@ function Home() {
         {/* Content Container: Headlines and CTAs */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-10">
           {/* Main Headline */}
-          <div className="relative text-center text-black px-4">
+          <div className="relative text-center text-white px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             Shaping Stories. Building Brands
           </h1>
@@ -113,7 +113,7 @@ function Home() {
           Our Motto : People. Possibilities. Passion
         </h1>
         <div>
-          <ul className="md:px-50 px-15 space-y-3 list-disc py-5 text-xl">
+          <ul className="md:px-25 px-15 space-y-3 list-disc py-5 text-xl">
             <li>
               <span className="font-bold">People : </span>
               <span>
@@ -137,14 +137,14 @@ function Home() {
             </li>
           </ul>
 
-          <p className="md:px-40 px-10 text-2xl md:text-xl font-bold">
+          <p className="md:px-25 px-10 text-2xl md:text-xl font-bold">
             What drives us :
           </p>
-          <p className="md:px-40 px-10">
+          <p className="md:px-25 px-10">
             We are motivated by our client's success and guided by our core
             values:
           </p>
-          <ul className="md:px-50 px-15 list-disc py-5  space-y-3 text-xl">
+          <ul className="md:px-25 px-15 list-disc py-5 mb-10 space-y-3 text-xl">
             <li>
               <span className="font-bold">Strength </span>
               <span>to overcome challenges and deliver results.</span>
@@ -162,27 +162,18 @@ function Home() {
               <span>to exceed expectations and honor our promises.</span>
             </li>
             <li>
-              <span className="font-bold">Growth: </span>
+              <span className="font-bold ">Growth: </span>
               <span>for our clients, our team, and ourselves.</span>
             </li>
           </ul>
         </div>
 
-        <div className="text-justify md:px-25 px-10  py-10 text-xl">
-          "We are a team of like-minded, creative, and strategic thinkers,
-          driven by a single mission: to make things happen. With decades of PR
-          and marketing experience, we don’t just execute campaigns—we craft
-          stories that resonate, strategies that deliver results, and
-          experiences thatelevate brands. From technology to lifestyle, consumer
-          products to travel, we bring professional expertise and a relentless
-          focus on impact to every project, helping your business stand out in a
-          crowded market."
-        </div>
+      
       </div>
       {/* --- */}
 
       {/* === MOVING CLIENT LOGOS SECTION === */}
-      <div className="relative w-full overflow-hidden  bg-white py-10">
+      <div className="relative w-full overflow-hidden border-t border-t-zinc-400  bg-white py-10">
         <h2 className="text-3xl font-bold text-center mb-6">Our Clients</h2>
         <div className="flex animate-scroll space-x-10">
           {[...clients, ...clients].map((client, index) => (
@@ -201,7 +192,7 @@ function Home() {
       {/* --- */}
 
       {/* === TESTIMONIALS SECTION (Paths were already correct) === */}
-      <div className="bg-white py-16 px-6 md:px-20 ">
+      <div className="bg-white py-16 px-6 md:px-20 border-t border-t-zinc-400 ">
         <h2 className="text-4xl font-bold text-center mb-10">Testimonials</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, index) => (

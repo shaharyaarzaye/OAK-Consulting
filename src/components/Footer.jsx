@@ -88,7 +88,7 @@ const ImageMatchFooter = () => {
 
             {/* Contact Details (Smaller, White) */}
             <div className="text-sm font-normal text-white space-y-1">
-              <p>Dubai Silicon Oasis, UAE</p>
+              <p>Office 33, Floor 9,<br /> Business Towers,<br />Burjuman Mall</p>
 
               <p>
                 <a

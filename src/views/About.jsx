@@ -24,7 +24,7 @@ export default function About() {
         <img 
                     src="About_us.JPG" // Replace with your desired hero image
                     alt="Oak Consulting Hero" 
-                    className='absolute inset-0 h-full w-full object-cover'
+                    className='absolute inset-0 h-full w-full object-cover contrast-125 brightness-50'
                 />
 
         {/* Overlay for Darkening/Grayscale and Contrast */}
@@ -34,14 +34,14 @@ export default function About() {
           {/* Main Headline */}
           <h1
             className="
-                        text-black 
-                        text-3xl md:text-5xl lg:text-5xl 
+                        text-white 
+                        text-3xl md:text-4xl lg:text-4xl 
                         font-extrabold 
                         leading-tight 
                         mb-4"
           >
-            Established in 2004, OAK Consulting is a young and dynamic Public
-            Relations and Communications company headquartered in the UAE.
+            Established in 2004 <br /> OAK Consulting is a young and dynamic Public
+            Relations and Communications company headquartered in the UAE
           </h1>
 
           {/* CTA Buttons Container */}

@@ -27,7 +27,7 @@ export default function Whoweare() {
       </div>
 
       {/* Main Content: Two-Column Layout with Lists */}
-      <div className="py-16 px-4 sm:px-6 lg:px-35">
+      <div className="py-16 px-4 sm:px-6 lg:px-35 ">
         <div className="max-w-7xl mx-auto">
           {/* Section 1: Benefits */}
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
@@ -51,7 +51,7 @@ export default function Whoweare() {
             </li>
           </ul>
 
-          <p className="mt-8 text-lg text-gray-600 border-t pt-6">
+          <p className="mt-8 text-lg text-gray-600 pt-6">
             With Oak Consulting, your brand doesn’t just communicate—it connects, resonates, and thrives in today’s competitive marketplace.
           </p>
 
@@ -84,14 +84,11 @@ export default function Whoweare() {
           <p className="mt-8 text-lg text-gray-600">
             At Oak Consulting, we don’t just manage PR—we craft strategies that elevate your brand, build trust, and drive measurable growth.
           </p>
-          
-          <p className="mt-4 text-sm text-gray-500">
-            FLAGS - In motion
-          </p>
+        
         </div>
            {/* === TEAM SECTION === */}
-      <div className="bg-white py-16  px-6 md:px-20">
-        <h2 className="text-4xl font-bold text-center mb-10">Our Team</h2>
+      <div className="bg-white py-16  px-6 md:px-20 ">
+        <h2 className="text-4xl font-bold text-center mb-10 ">Our Team</h2>
         <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8">
           {team.map((member, index) => (
             <div
