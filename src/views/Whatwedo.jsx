@@ -75,7 +75,7 @@ export default function WhatWeDo() {
               src={`services/${img.src}`} // Ensure these images are in the public folder
               className="bg-zinc-800 h-full w-full rounded-lg transition-transform hover:scale-105"
             />
-            <h1 className="mt-3 bg-black/15">{img.name}</h1>
+            <h1 className="mt-3 text-white bg-[#560001]">{img.name}</h1>
             </div>
             
           ))}
@@ -92,48 +92,51 @@ export default function WhatWeDo() {
           </p>
 
           {/* UL Container for Single Column */}
-          <div className="max-w-3xl mx-auto"> 
-            <ul className="
-                list-disc 
-                list-inside 
-                text-lg 
-                text-gray-700
-                space-y-3 
-                pl- 
-              ">
-              <li className="font-medium">
-                Strategic Consultation – Turning insights into action and results.
-              </li>
-              <li className="font-medium">
-                Media Management – Building meaningful media relationships that
-                amplify your voice.
-              </li>
-              <li className="font-medium">
-                Media Training – Preparing your team to communicate confidently in
-                both Arabic and English.
-              </li>
-              <li className="font-medium">
-                Crisis & Issues Management – From rapid-response statements to
-                full-scale crisis strategies.
-              </li>
-              <li className="font-medium">
-                Product Launches – Creating buzz, awareness, and lasting impact
-                from day one.
-              </li>
-              <li className="font-medium">
-                Content Strategy & Creation – Crafting compelling stories that
-                resonate across channels.
-              </li>
-              <li className="font-medium">
-                Community Management – Connecting with audiences and fostering
-                engagement.
-              </li>
-              <li className="font-medium">
-                Influencer Marketing – Leveraging authentic voices to amplify your
-                message and reach.
-              </li>
-            </ul>
-          </div>
+          <div className="max-w-3xl mx-auto">
+  <ul
+    className="
+      list-disc 
+      list-outside 
+      pl-6 
+      sm:pl-8 
+      text-lg 
+      text-gray-700
+      space-y-3 
+    "
+  >
+    <li className="font-medium">
+        Strategic Consultation – Turning insights into action and results.
+    </li>
+    <li className="font-medium">
+        Media Management – Building meaningful media relationships that
+        amplify your voice.
+    </li>
+    <li className="font-medium">
+        Media Training – Preparing your team to communicate confidently in
+        both Arabic and English.
+    </li>
+    <li className="font-medium">
+        Crisis & Issues Management – From rapid-response statements to
+        full-scale crisis strategies.
+    </li>
+    <li className="font-medium">
+        Product Launches – Creating buzz, awareness, and lasting impact
+        from day one.
+    </li>
+    <li className="font-medium">
+        Content Strategy & Creation – Crafting compelling stories that
+        resonate across channels.
+    </li>
+    <li className="font-medium">
+        Community Management – Connecting with audiences and fostering
+        engagement.
+    </li>
+    <li className="font-medium">
+        Influencer Marketing – Leveraging authentic voices to amplify your
+        message and reach.
+    </li>
+  </ul>
+</div>
         </div>
       </div>
             {/* === MOVING FLAGS SECTION === */}

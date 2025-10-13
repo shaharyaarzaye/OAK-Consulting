@@ -1,10 +1,13 @@
 
 
   const team = [
-    { name: "Emily Roberts", role: "Founder & CEO", image: "team1.jpg" },
-    { name: "Daniel Thompson", role: "Creative Director", image: "team2.jpg" },
-    { name: "Priya Nair", role: "PR & Communications Lead", image: "team3.jpg" },
-    { name: "James Lee", role: "Digital Marketing Strategist", image: "team4.jpg" },
+    { name: "Emily Roberts", role: "Founder & CEO", image: "Image-1.jpeg" },
+    { name: "Daniel Thompson", role: "Creative Director", image: "Image-2.jpeg" },
+    { name: "Priya Nair", role: "PR & Communications Lead", image: "Image-3.jpeg" },
+    { name: "James Lee", role: "Digital Marketing Strategist", image: "Image-4.jpeg" },
+    { name: "James Lee", role: "Digital Marketing Strategist", image: "Image-5.jpeg" },
+    { name: "James Lee", role: "Digital Marketing Strategist", image: "Image-6.jpeg" },
+    { name: "James Lee", role: "Digital Marketing Strategist", image: "Image-7.jpeg" },
   ];
 
 export default function Whoweare() {
@@ -96,12 +99,12 @@ export default function Whoweare() {
               className="text-center group hover:-translate-y-2 transform transition duration-300"
             >
               <img
-                src={`/team/${member.image}`}
+                src={`/Team/${member.image}`}
                 alt={member.name}
-                className="w-40 h-40 rounded-full mx-auto object-cover mb-4 shadow-md group-hover:shadow-xl transition duration-300"
+                className="w-70 h-40 rounded-md mx-auto object-cover mb-4 shadow-md group-hover:shadow-xl transition duration-300"
               />
-              <h3 className="text-lg font-semibold">{member.name}</h3>
-              <p className="text-gray-500">{member.role}</p>
+              {/* <h3 className="text-lg font-semibold">{member.name}</h3> */}
+              {/* <p className="text-gray-500">{member.role}</p> */}
             </div>
           ))}
         </div>

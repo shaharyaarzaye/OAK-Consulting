@@ -78,13 +78,17 @@ export default function About() {
                     </div> */}
         </div>
       </div>
-      <div className="text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5 py-15 ">
+      <div className="py-20">
+<div className="text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5  ">
         With decades of PR experience spanning the Middle East, India, Africa,
         and beyond, we have built a proven track record of delivering impactful
         communications strategies for a diverse range of clients. Our growth has
         been driven entirely by the trust and recommendations of the
         organizations we work with, reflecting the long-lasting relationships we
-        cultivate. While we are widely recognized as a specialist Tech PR
+        cultivate.
+      </div>
+      <div className="text-2xl md:text-2xl text-justify md:px-25 px-10 pt-5 ">
+         While we are widely recognized as a specialist Tech PR
         agency, our expertise extends across lifestyle, consumer products,
         travel, tourism, and other sectors, enabling us to craft tailored
         campaigns that resonate with varied audiences. Our holistic approach,
@@ -92,6 +96,8 @@ export default function About() {
         trusted partner for brands looking to elevate their presence and tell
         their stories effectively.
       </div>
+      </div>
+      
     </div>
   );
 }

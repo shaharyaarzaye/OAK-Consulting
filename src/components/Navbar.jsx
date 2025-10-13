@@ -28,7 +28,7 @@ const Header = () => {
             href: 'whatwedo',
             dropdown: [
                 { name: 'What we do?', href: 'whatwedo' },
-                { name: 'Why OAK?', href: 'whatwedo' }
+                // { name: 'Why OAK?', href: 'whatwedo' }
             ]
         }
     ];
@@ -39,15 +39,15 @@ const Header = () => {
         setDropdownOpen(false);
     };
 
-    const navTextColor = isScrolled ? 'text-white' : 'text-black';
-    const navTextHover = isScrolled ? 'hover:text-zinc-300' : 'hover:text-zinc-700';
+    const navTextColor = isScrolled ? 'text-white' : 'text-orange';
+    const navTextHover = isScrolled ? 'hover:text-[#fe6700]' : 'hover:text-[#fe6700]';
 
     return (
         <header className="absolute top-0 w-full z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
                 <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
-                    <img src="logo.jpg" alt="Logo" className="h-15 w-auto " />
+                    <img src="logo.jpg" alt="Logo" className="h-20 w-auto " />
                 </Link>
 
                 {/* Hamburger */}

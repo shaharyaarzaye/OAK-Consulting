@@ -85,7 +85,7 @@ function Home() {
           {/* Main Headline */}
           <div className="relative text-center text-white px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            Shaping Stories, Building Brands
+            Shaping Stories. Building Brands
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
             Turning ideas into stories that resonate, influence, and transform
@@ -144,7 +144,7 @@ function Home() {
             We are motivated by our client's success and guided by our core
             values:
           </p>
-          <ul className="md:px-50 px-15 list-disc py-5 text-xl">
+          <ul className="md:px-50 px-15 list-disc py-5  space-y-3 text-xl">
             <li>
               <span className="font-bold">Strength </span>
               <span>to overcome challenges and deliver results.</span>
@@ -167,12 +167,7 @@ function Home() {
             </li>
           </ul>
         </div>
-        <div className="text-justify px-9 md:px-25 py-5 text-xl text-red-500">
-          We are a group of like-minded, creative, and strategic thinkers,
-          working together to make to things happen and bringing professional
-          credentials and extensive PR and marketing experience to your
-          business.
-        </div>
+
         <div className="text-justify md:px-25 px-10  py-10 text-xl">
           "We are a team of like-minded, creative, and strategic thinkers,
           driven by a single mission: to make things happen. With decades of PR
@@ -237,11 +232,17 @@ function Home() {
         <h2 className="text-4xl font-bold text-center mb-10">
           Awards and Recognition
         </h2>
-        <ul className="max-w-3xl mx-auto text-center space-y-4 text-lg text-gray-700">
-          <li>🏆GEC Awards 2015 – Top PR Agency</li>
+        <ul className="max-w-3xl mx-auto text-center space-y-10 text-lg text-gray-700">
           <li>
-            🏅Top Tech PR agency in the Middle East by Forrester Research (Year
+            <img src="Awards/image-1.jpeg" alt="gec" />
+            <span className="text-2xl font-bold">🏆GEC Awards 2015 – Top PR Agency</span>
+            </li>
+          <li>
+            <img src="Awards/image-2.jpeg" alt="" />
+            <span className="text-2xl font-bold">
+              🏅Top Tech PR agency in the Middle East by Forrester Research (Year
             TBD)
+              </span>
           </li>
         </ul>
       </div>
