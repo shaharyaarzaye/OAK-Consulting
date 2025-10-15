@@ -26,10 +26,7 @@ const Header = () => {
         {
             name: 'Our Services',
             href: 'whatwedo',
-            dropdown: [
-                { name: 'What we do?', href: 'whatwedo' },
-                // { name: 'Why OAK?', href: 'whatwedo' }
-            ]
+        
         }
     ];
 
@@ -142,12 +139,12 @@ const Header = () => {
                     <Link
                         to="getintouch"
                         className={`
-                            px-6 py-3 border text-lg font-semibold rounded-full transition whitespace-nowrap
-                            text-white border-white hover:bg-white hover:text-zinc-950 
+                            px-6 py-3 text-lg font-semibold rounded-full transition whitespace-nowrap
+                            text-white  hover:bg-white hover:text-zinc-950 
                             lg:px-5 lg:py-2 lg:text-sm 
                             ${isScrolled 
-                                ? 'lg:border-white lg:bg-transparent lg:text-white lg:hover:bg-white lg:hover:text-zinc-950' 
-                                : 'lg:border-black lg:bg-black lg:text-white lg:hover:bg-white lg:hover:text-zinc-950'}
+                                ? ' lg:bg-transparent lg:text-white lg:hover:bg-white lg:hover:text-zinc-950' 
+                                : ' lg:bg-[#FF6600] lg:text-white lg:hover:bg-white lg:hover:text-zinc-950'}
                         `}
                         onClick={closeMenu}
                     >

@@ -2,6 +2,7 @@
 // in your CSS for the moving logos/flags section.
 
 function Home() {
+  // === 1. Data Definitions ===
   const clients = [
     "sophos.jpg",
     "sentinelone.jpg",
@@ -21,6 +22,69 @@ function Home() {
     "cisco.jpg",
     "aveva.jpg",
     "asus.jpg",
+  ];
+
+  const awardItems = [
+    {
+      mainTitle: "GEC Awards 2015",
+      subtitle: "Top PR Agency",
+      icon: "🏅", // Placeholder icon (replace with image or SVG if desired)
+    },
+    {
+      mainTitle: "Forrester Research",
+      subtitle: "Top Tech PR Agency in the Middle East",
+      icon: "🏆", // Placeholder icon (replace with image or SVG if desired)
+    },
+  ];
+
+  const mottoItems = [
+    {
+      title: "People",
+      description:
+        "The heart of our agency, bringing creativity, expertise, and dedication to every project.",
+      icon: "👥",
+    },
+    {
+      title: "Possibilities",
+      description:
+        "We believe in making things happen and turning bold ideas into measurable reality.",
+      icon: "💡",
+    },
+    {
+      title: "Passion",
+      description:
+        "The driving force behind our success and unwavering commitment to our clients.",
+      icon: "🧡",
+    },
+  ];
+
+  const valueItems = [
+    // Updated descriptions based on the image provided
+    {
+      title: "Strength",
+      description: "to overcome challenges and deliver results.",
+      icon: "💪",
+    },
+    {
+      title: "Resilience",
+      description: "to adapt, innovate, and stay ahead.",
+      icon: "🌱",
+    },
+    {
+      title: "Integrity",
+      description: "to act with honesty and transparency in all we do.",
+      icon: "🛡️",
+    },
+    {
+      title: "Commitment",
+      description: "to exceed expectations and honor our promises.",
+      icon: "🤝",
+    },
+    {
+      title: "Growth",
+      description: "for our clients, our team, and ourselves.",
+      icon: "📈",
+    },
   ];
 
   const testimonials = [
@@ -44,168 +108,187 @@ function Home() {
     },
   ];
 
-  return (
-    <div>
-      {/* === HERO SECTION === */}
-      {/* ✅ FIX: Changed style prop from style={{backgroundImage : "src('home.jpg')"}} 
-           to correct CSS syntax: style={{backgroundImage : "url('/home.jpg')"}}.
-           The / ensures it looks in the public root folder.
-      */}
-     
-        <div className="relative h-screen  overflow-hidden">
-        {/* Background Video/Image Container */}
-        {/* For video, uncomment the <video> tag and replace src */}
-        {/* For image, ensure the <img> tag has the correct src */}
+  const primaryOrange = "text-[#FF6600]";
+  const darkBgColor = "bg-neutral-900"; // Define a uniform dark background
 
-        {/* Option 1: Background Video */}
-        
-                <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className='absolute inset-0 h-full w-full object-cover  '
-                >
-                    <source src="home_video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-               
-
-        {/* Option 2: Background Image (if no video, or as a fallback) */}
-        {/* <img 
-                    src="home.JPG" // Replace with your desired hero image
-                    alt="Oak Consulting Hero" 
-                    className='absolute inset-0 h-full w-full object-cover'
-                /> */}
-
-        {/* Overlay for Darkening/Grayscale and Contrast */}
-
-        {/* Content Container: Headlines and CTAs */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-10">
-          {/* Main Headline */}
-          <div className="relative text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            Shaping Stories. Building Brands
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-            Turning ideas into stories that resonate, influence, and transform
-            brands
-          </p>
-        </div>
-
-         
+  // === 2. ValueCard Helper Component (for What Drives Us section) ===
+  const ValueCard = ({ title, description, icon }) => (
+    <div
+      // Glass card styling: dark translucent background, blur, border, shadow
+      className="p-4 h-36 flex items-start  rounded-xl  text-white transition duration-300 "
+    >
+      {/* Icon section: Yellow/Gold glow on the left */}
+      <div className="mr-4 mt-1 flex-shrink-0">
+        <div
+          className="w-8 h-8 flex items-center justify-center 
+                                rounded-full bg-yellow-500/10 text-yellow-400 text-xl 
+                                ring-2 ring-yellow-500/30"
+        >
+          {icon}
         </div>
       </div>
 
-      {/* === ABOUT SECTION (No changes needed here) === */}
+      {/* Text content */}
+      <div>
+        {/* Title styled with the gold color from the mockup */}
+        <h3 className={`text-lg font-bold mb-1 tracking-wide text-yellow-400`}>
+          {title}
+        </h3>
+        <p className="text-sm text-gray-300 leading-snug">{description}</p>
+      </div>
+    </div>
+  );
+  // === End of ValueCard Helper ===
+
+  return (
+    <div>
+      {/* === HERO SECTION === */}
+      <div className="relative h-screen overflow-hidden">
+        {/* Background Video/Image Container */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="home_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Content Container: Headlines and CTAs */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-10">
+          <div className="relative text-center text-white px-4">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              Shaping Stories.{" "}
+              <span className="text-[#FF6600]">Building Brands</span>
+            </h1>
+            <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
+              Turning ideas into stories that resonate, influence, and transform
+              brands
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* === ABOUT SECTION (We Make Things Happen) === */}
       <div className="">
-        <p className="text-justify md:px-25 px-10 text-xl py-4 mt-5">
+        <h2 className="text-5xl font-bold text-center mt-15 text-black">
+          We Make Things <span className="text-[#FF6600]">Happen</span>
+        </h2>
+        <p className="text-justify mb-10 md:px-25 px-10 text-xl py-4 mt-5 max-">
           "We are a team of like-minded, creative, and strategic thinkers,
           driven by a single mission: to make things happen. With decades of PR
-          and marketing experience, we don’t just execute campaigns—we craft
+          and marketing experience, we don’t just execute campaigns, we craft
           stories that resonate, strategies that deliver results, and
           experiences that elevate brands. From technology to lifestyle,
           consumer products to travel, we bring professional expertise and a
           relentless focus on impact to every project, helping your business
           stand out in a crowded market."
         </p>
-        <h1 className="md:text-5xl text-3xl font-bold text-center py-5">
-          Our Motto : People. Possibilities. Passion
-        </h1>
-        <div>
-          <ul className="md:px-25 px-15 space-y-3 list-disc py-5 text-xl">
-            <li>
-              <span className="font-bold">People : </span>
-              <span>
-                The heart of our agency, bringing creativity, expertise, and
-                dedication to every project.
-              </span>
-            </li>
-            <li>
-              <span className="font-bold">Possibilities : </span>
-              <span>
-                We belive in making things happen and turning ideas into
-                reality.
-              </span>
-            </li>
-            <li>
-              <span className="font-bold">Passion : </span>
-              <span>
-                Its the driving force behind our success and our commitment to
-                our clients.
-              </span>
-            </li>
-          </ul>
 
-          <p className="md:px-25 px-10 text-2xl md:text-xl font-bold">
-            What drives us :
-          </p>
-          <p className="md:px-25 px-10">
-            We are motivated by our client's success and guided by our core
-            values:
-          </p>
-          <ul className="md:px-25 px-15 list-disc py-5 mb-10 space-y-3 text-xl">
-            <li>
-              <span className="font-bold">Strength </span>
-              <span>to overcome challenges and deliver results.</span>
-            </li>
-            <li>
-              <span className="font-bold">Resillence : </span>
-              <span>to adapt, innovate, and stay ahead.</span>
-            </li>
-            <li>
-              <span className="font-bold">Integrity : </span>
-              <span>to act with honesty and transparency in all we do.</span>
-            </li>
-            <li>
-              <span className="font-bold">Commitment: </span>
-              <span>to exceed expectations and honor our promises.</span>
-            </li>
-            <li>
-              <span className="font-bold ">Growth: </span>
-              <span>for our clients, our team, and ourselves.</span>
-            </li>
-          </ul>
+        {/* === OUR MOTTO & WHAT DRIVES US CONTAINER (New Dark Section) === */}
+        <div className={`${darkBgColor} py-16 px-6 md:px-20`}>
+          {/* --- OUR MOTTO SECTION --- */}
+          <h2
+            className={`md:text-5xl text-3xl font-bold text-center py-5 text-white`}
+          >
+            Our <span className={primaryOrange}>Motto</span>
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {mottoItems.map((item, index) => (
+              <div
+                key={`motto-${index}`}
+                // Styling the card: dark background, transparency, blur, white text
+                className="p-6 flex flex-col justify-between 
+                                          bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                                          shadow-2xl text-white transition duration-300 hover:bg-white/10"
+              >
+                {/* Icon section: Yellow/Gold glow */}
+                <div className="mb-4">
+                  <div
+                    className="w-10 h-10 flex items-center justify-center 
+                                                    rounded-full bg-yellow-500/10 text-yellow-400 text-2xl 
+                                                    ring-2 ring-yellow-500/30"
+                  >
+                    {item.icon}
+                  </div>
+                </div>
+
+                {/* Text content */}
+                <div>
+                  <h3 className="text-xl font-bold mb-2 tracking-wide">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-300">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* --- WHAT DRIVES US SECTION (Updated to New Card Style) --- */}
+          <div className="border border-zinc-400 rounded-xl">
+            <h2
+              className={`md:text-4xl text-2xl font-bold text-center pt-8 mb-4  text-white`}
+            >
+              What <span className={primaryOrange}>Drives Us</span>
+            </h2>
+            <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-10">
+              We are motivated by our clients' success and guided by our core
+              values:
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-2 max-w-4xl mx-auto">
+              {valueItems.map((item, index) => (
+                <ValueCard
+                  key={`value-${index}`}
+                  title={item.title}
+                  description={item.description}
+                  icon={item.icon}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
-      
+        {/* NOTE: The original <ul> list for motto and values is now removed/replaced by the cards above */}
       </div>
-      {/* --- */}
+      {/* --- END ABOUT SECTION --- */}
 
       {/* === MOVING CLIENT LOGOS SECTION === */}
-      <div className="relative w-full overflow-hidden border-t border-t-zinc-400  bg-white py-10">
-        <h2 className="text-3xl font-bold text-center mb-6">Our Clients</h2>
+      <div className="relative w-full overflow-hidden border-t border-t-zinc-400 bg-white py-10">
+        <h2
+          className={`md:text-5xl text-3xl font-bold text-center py-5 text-black mb-8`}
+        >
+          Trusted by <span className={primaryOrange}>Industry Leaders</span>
+        </h2>{" "}
         <div className="flex animate-scroll space-x-10">
           {[...clients, ...clients].map((client, index) => (
             <img
               key={index}
-              // ✅ FIX: Prepended a path. Assumes logos are in a subfolder named 'client-logos' in 'public'
-              // If they are directly in 'public', use src={`/${client}`}
               src={`clients/${client}`}
               alt={client}
-              className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300 "
-              // Added 'grayscale' class by default so hover effect works
+              className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300"
             />
           ))}
         </div>
       </div>
       {/* --- */}
 
-      {/* === TESTIMONIALS SECTION (Paths were already correct) === */}
-      <div className="bg-white py-16 px-6 md:px-20 border-t border-t-zinc-400 ">
-        <h2 className="text-4xl font-bold text-center mb-10">Testimonials</h2>
+      {/* === TESTIMONIALS SECTION === */}
+      <div className="bg-white py-16 px-6 md:px-20 border-t border-t-zinc-400">
+        <h2
+          className={`md:text-5xl text-3xl font-bold text-center py-5 text-black mb-8`}
+        >
+          What Our <span className={primaryOrange}>Clients Say</span>
+        </h2>{" "}
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition duration-300"
             >
-              {/* <img
-                // Path looks correct: /testimonials/ is assumed to be in the public folder
-                src={`/testimonials/${t.image}`}
-                alt={t.name}
-                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
-              /> */}
               <p className="text-gray-700 italic mb-3">"{t.text}"</p>
               <h4 className="font-bold text-lg">{t.name}</h4>
               <p className="text-sm text-gray-500">{t.company}</p>
@@ -215,27 +298,94 @@ function Home() {
       </div>
       {/* --- */}
 
-
-      {/* --- */}
-
       {/* === RECOGNITION / AWARDS SECTION === */}
-      <div className="bg-white py-16 px-6 md:px-20 ">
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Awards and Recognition
+
+      <div className="bg-white py-16 px-6 md:px-20 border-t border-t-zinc-400">
+        <h2
+          className={`md:text-5xl text-3xl font-bold  text-center py-5 text-black mb-8`}
+        >
+          Awards & <span className={primaryOrange}>Recognition</span>
         </h2>
-        <ul className="max-w-3xl mx-auto text-center space-y-10 text-lg text-gray-700">
-          <li>
-            <img src="Awards/image-1.jpeg" alt="gec" />
-            <span className="text-2xl font-bold">🏆GEC Awards 2015 – Top PR Agency</span>
-            </li>
-          <li>
-            <img src="Awards/image-2.jpeg" alt="" />
-            <span className="text-2xl font-bold">
-              🏅Top Tech PR agency in the Middle East by Forrester Research (Year
-            TBD)
-              </span>
-          </li>
-        </ul>
+
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Awards Section 1: Glass Cards on a Dark Background */}
+          <div className=" ">
+            <div className="grid md:grid-cols-2 gap-6">
+              {awardItems.map((award, index) => (
+                <div
+                  key={index}
+                  // Glass Card Styling for Awards
+                  className="p-4 flex items-center  rounded-xl border border-zinc-300 text-black "
+                >
+                  {/* Icon Column (using the yellow style from your other cards) */}
+                  <div className="mr-4 flex-shrink-0">
+                    <div
+                      className="w-10 h-10 flex items-center justify-center 
+                                                        rounded-full  text-black text-2xl 
+                                                        ring-2 ring-yellow-500/30"
+                    >
+                      {award.icon}
+                    </div>
+                  </div>
+                  {/* Text Content */}
+                  <div>
+                    <h3 className="font-bold text-lg text-black leading-snug">
+                      {award.mainTitle}
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-snug">
+                      {award.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Awards Section 2: Large Red Picture Placeholders */}
+          <div className="grid md:grid-cols-2 gap-6 pt-4">
+            {/* Image Container 1 */}
+            <div className="w-full h-64 rounded-xl overflow-hidden shadow-2xl">
+              <img
+                src="Awards/image-1.jpeg"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Image Container 2 */}
+            <div className="w-full h-64 rounded-xl overflow-hidden shadow-2xl">
+              <img
+                src="Awards/image-2.jpeg"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="py-16 px-6 md:px-20 bg-cover bg-center relative"
+        style={{ backgroundImage: "url('/cta-background.jpg')" }} // Placeholder background image
+      >
+        <div className="absolute inset-0 bg-neutral-900 opacity-80"></div>
+        <div className="relative z-10 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
+            Ready to <span className="text-[#FF6600]">Elevate Your Brand</span>?
+          </h2>
+          <p className="mb-6 text-lg max-w-2xl mx-auto">
+            Let's craft a story that resonates with your audience and delivers
+            measurable results.
+          </p>
+          <div className="flex justify-center gap-5">
+            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
+              Work with Us
+            </button>
+            <button className="text-[#FF6600] bg-transparent border-2 border-[#FF6600] font-bold py-3  px-8 rounded-full text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
+              WhatsApp Us
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
