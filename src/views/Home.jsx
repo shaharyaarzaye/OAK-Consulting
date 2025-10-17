@@ -121,8 +121,8 @@ function Home() {
       <div className="mr-4 mt-1 flex-shrink-0">
         <div
           className="w-8 h-8 flex items-center justify-center 
-                                rounded-full bg-yellow-500/10 text-yellow-400 text-xl 
-                                ring-2 ring-yellow-500/30"
+                                rounded-full bg-orange-100 text-yellow-400 text-xl 
+                                ring-2 ring-orange-300"
         >
           {icon}
         </div>
@@ -131,10 +131,10 @@ function Home() {
       {/* Text content */}
       <div>
         {/* Title styled with the gold color from the mockup */}
-        <h3 className={`text-lg font-bold mb-1 tracking-wide text-yellow-400`}>
+        <h3 className={`text-xl font-bold mb-1 tracking-wide text-[#FF6600]`}>
           {title}
         </h3>
-        <p className="text-sm text-gray-300 leading-snug">{description}</p>
+        <p className="text-md text-zinc-800 leading-snug">{description}</p>
       </div>
     </div>
   );
@@ -161,7 +161,9 @@ function Home() {
           <div className="relative text-center text-white px-4">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
               Shaping Stories.{" "}
-              <span className="text-[#FF6600]">Building Brands</span>
+            </h1>
+            <h1 className="text-4xl md:text-6xl text-[#FF6600] mt-3 font-extrabold tracking-tight">
+              Building Brands
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
               Turning ideas into stories that resonate, influence, and transform
@@ -176,41 +178,42 @@ function Home() {
         <h2 className="text-5xl font-bold text-center mt-15 text-black">
           We Make Things <span className="text-[#FF6600]">Happen</span>
         </h2>
-        <p className="text-justify mb-10 md:px-25 px-10 text-xl py-4 mt-5 max-">
-          "We are a team of like-minded, creative, and strategic thinkers,
-          driven by a single mission: to make things happen. With decades of PR
-          and marketing experience, we don’t just execute campaigns, we craft
+        <p className="text-justify mb-2 md:px-25 px-10 text-xl py-4 mt-5 max-">
+          We are a team of creative and strategic thinkers with decades of PR
+          and marketing experience. We don’t just execute campaigns – we craft
           stories that resonate, strategies that deliver results, and
-          experiences that elevate brands. From technology to lifestyle,
-          consumer products to travel, we bring professional expertise and a
-          relentless focus on impact to every project, helping your business
-          stand out in a crowded market."
+          experiences that elevate brands.
+        </p>
+        <p className="text-center mb-10 md:px-25 px-10 text-md  py-4 mt-1 max-">
+          From technology to lifestyle, consumer products to travel, we bring
+          professional expertise and a relentless focus on impact to every
+          project, helping your business stand out in a crowded market.
         </p>
 
         {/* === OUR MOTTO & WHAT DRIVES US CONTAINER (New Dark Section) === */}
-        <div className={`${darkBgColor} py-16 px-6 md:px-20`}>
+        <div className=" bg-white py-16 px-6 md:px-20 border-t border-t-zinc-400">
           {/* --- OUR MOTTO SECTION --- */}
           <h2
-            className={`md:text-5xl text-3xl font-bold text-center py-5 text-white`}
+            className={`md:text-5xl text-3xl font-bold text-center py-2 text-black`}
           >
             Our <span className={primaryOrange}>Motto</span>
           </h2>
+          <p className="text-center text-md mb-10">People. Possibilities. Passion.</p>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          <div className="grid md:grid-cols-3 gap-8  max-w-6xl mx-auto mb-16">
             {mottoItems.map((item, index) => (
               <div
                 key={`motto-${index}`}
                 // Styling the card: dark background, transparency, blur, white text
                 className="p-6 flex flex-col justify-between 
-                                          bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
-                                          shadow-2xl text-white transition duration-300 hover:bg-white/10"
+                                          bg-white/5  backdrop-blur-sm rounded-xl border border-black/30 text-black transition duration-300 hover:bg-white/10"
               >
                 {/* Icon section: Yellow/Gold glow */}
                 <div className="mb-4">
                   <div
                     className="w-10 h-10 flex items-center justify-center 
-                                                    rounded-full bg-yellow-500/10 text-yellow-400 text-2xl 
-                                                    ring-2 ring-yellow-500/30"
+                                                    rounded-full bg-orange-100 text-[#FF6600] text-2xl 
+                                                    ring-2 ring-orange-300"
                   >
                     {item.icon}
                   </div>
@@ -221,21 +224,23 @@ function Home() {
                   <h3 className="text-xl font-bold mb-2 tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-300">{item.description}</p>
+                  <p className="text-sm text-zinc-800">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* --- WHAT DRIVES US SECTION (Updated to New Card Style) --- */}
-          <div className="border border-zinc-400 rounded-xl">
+        {/* --- WHAT DRIVES US SECTION (Updated to New Card Style) --- */}
+        <div>
+          <div className=" border-t-zinc-400   border-t">
             <h2
-              className={`md:text-4xl text-2xl font-bold text-center pt-8 mb-4  text-white`}
+              className={`md:text-4xl text-2xl font-bold text-center pt-8 mb-4  text-black`}
             >
               What <span className={primaryOrange}>Drives Us</span>
             </h2>
-            <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-10">
-              We are motivated by our clients' success and guided by our core
+            <p className="text-center text-lg text-zinc-800 max-w-3xl mx-auto mb-10">
+              We are motivated by our clients success and guided by our core
               values:
             </p>
 
@@ -259,11 +264,12 @@ function Home() {
       {/* === MOVING CLIENT LOGOS SECTION === */}
       <div className="relative w-full overflow-hidden border-t border-t-zinc-400 bg-white py-10">
         <h2
-          className={`md:text-5xl text-3xl font-bold text-center py-5 text-black mb-8`}
+          className={`md:text-5xl text-3xl font-bold text-center py-2 text-black mb-2`}
         >
           Trusted by <span className={primaryOrange}>Industry Leaders</span>
         </h2>{" "}
-        <div className="flex animate-scroll space-x-10">
+        <p className="text-center text-md mb-10">Partnering with world-class brands to deliver exceptional results.</p>
+        <div className="flex animate-scroll space-x-10 ">
           {[...clients, ...clients].map((client, index) => (
             <img
               key={index}
@@ -365,21 +371,24 @@ function Home() {
       </div>
 
       <div
-        className="py-16 px-6 md:px-20 bg-cover bg-center relative"
+        className="py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
         style={{ backgroundImage: "url('/cta-background.jpg')" }} // Placeholder background image
       >
-        <div className="absolute inset-0 bg-neutral-900 opacity-80"></div>
-        <div className="relative z-10 text-center text-white">
+        <div className="absolute inset-0 bg-white opacity-80"></div>
+        <div className="relative z-10 text-center text-black">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-            Ready to <span className="text-[#FF6600]">Elevate Your Brand</span>?
+            Ready to Elevate Your<span className="text-[#FF6600]"> Brand ?</span>
           </h2>
-          <p className="mb-6 text-lg max-w-2xl mx-auto">
+          <p className=" text-lg max-w-2xl mx-auto">
             Let's craft a story that resonates with your audience and delivers
             measurable results.
           </p>
+          <p className="mb-6 text-lg max-w-2xl mx-auto">
+         Your success in our mission
+          </p>
           <div className="flex justify-center gap-5">
-            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
-              Work with Us
+            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
+              Let's Talk
             </button>
             <button className="text-[#FF6600] bg-transparent border-2 border-[#FF6600] font-bold py-3  px-8 rounded-full text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
               WhatsApp Us

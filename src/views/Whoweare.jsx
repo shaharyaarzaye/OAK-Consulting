@@ -57,8 +57,7 @@ export default function Whoweare() {
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <h2 className={`md:text-5xl text-3xl font-bold text-center mb-12`}>
-            The <span className={primaryOrange}>Benefits</span> of Working with
-            Us
+            Our <span className={primaryOrange}>Expertise</span>
           </h2>
 
           {/* Section 1: Benefits Cards */}
@@ -87,23 +86,22 @@ export default function Whoweare() {
               </div>
             </div>
             {/* Card 2: Sustained Positive Reputation */}
-              <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
+             <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-start">
-                <div className="text-green-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-shield-alt"></i>
+                <div className="text-red-600 text-3xl flex-shrink-0 mr-4 pt-1">
+                  <i className="fas fa-chart-line"></i>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Sustained Positive Reputation
+                    Business Growth & Sales
                   </h3>
                   <p className="text-gray-600">
-                    Through proactive reputation management and strategic
-                    communications, we help maintain a trustworthy and respected
-                    brand image.
+                   Our integrated PR and marketing strategy drive engagement, generate leads and convert visibility into tangible business results.
                   </p>
                 </div>
               </div>
             </div>
+              
             {/* Card 3: Greater Brand Awareness */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-start">
@@ -123,19 +121,19 @@ export default function Whoweare() {
               </div>
             </div>
             {/* Card 4: Business Growth and Sales Opportunities */}
-              <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
+             <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-start">
-                <div className="text-red-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-chart-line"></i>
+                <div className="text-green-600 text-3xl flex-shrink-0 mr-4 pt-1">
+                  <i className="fas fa-shield-alt"></i>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Business Growth & Sales
+                    Sustained Positive Reputation
                   </h3>
                   <p className="text-gray-600">
-                    Our integrated strategies drive engagement, generate leads,
-                    and convert visibility into tangible business results and
-                    sales opportunities.
+                    Through proactive reputation management and strategic
+                    communications, we help maintain a trustworthy and respected
+                    brand image.
                   </p>
                 </div>
               </div>
@@ -147,7 +145,7 @@ export default function Whoweare() {
             {" "}
             {/* Increased top margin */}
             <h2 className={`md:text-5xl text-3xl font-bold text-center mb-12`}>
-              Why Our <span className={primaryOrange}>Clients Choose Us</span>
+              Our Commitment <span className={primaryOrange}>Your Brand</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {" "}
@@ -187,7 +185,7 @@ export default function Whoweare() {
                   <i className="far fa-lightbulb"></i>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Proactive and Positive Attitude
+                  Proactive Attitude
                 </h3>
                 <p className="text-gray-600">
                   Always anticipating challenges and opportunities.
@@ -226,8 +224,7 @@ export default function Whoweare() {
                   Strong Media Relationships
                 </h3>
                 <p className="text-gray-600">
-                  Leveraging our trusted connections with media, editorial, and
-                  publishing teams to benefit your brand.
+                  Leveraging our trusted connections to benifits.
                 </p>
               </div>
             </div>
@@ -236,20 +233,23 @@ export default function Whoweare() {
           <p className="mt-16 text-xl text-gray-700 max-w-4xl mx-auto text-center font-medium">
             {" "}
             {/* Improved typography and centering */}
-            At Oak Consulting, we don’t just manage PR—we craft strategies that
-            elevate your brand, build trust, and drive measurable growth.
+            At Oak Consulting, we don’t just manage PR, we craft strategies that
+            <span className="text-[#ff6600]">elevate your brand, build trust, and drive measurable growth.</span> 
           </p>
         </div>
       </div>
 
       {/* --- Team Section --- */}
-      <div className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white border-t border-t-zinc-400 py-20 px-4 sm:px-6 lg:px-8">
         {" "}
         {/* Added light background and consistent padding */}
         <div className="max-w-7xl mx-auto">
-          <h2 className={`md:text-5xl text-3xl font-bold text-center mb-12`}>
-            Meet Our <span className={primaryOrange}>Dedicated Team</span>
+          <h2 className={`md:text-5xl text-3xl font-bold text-center mb-2`}>
+            Meet Our <span className={primaryOrange}> Team</span>
           </h2>
+          <p className="text-center mb-10">
+            A passionate team of PR and marketing professionals dedicated to your success.
+          </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {" "}
             {/* Adjusted grid for more balanced layout and consistency */}
@@ -280,30 +280,22 @@ export default function Whoweare() {
 
       {/* --- CTA Section --- */}
       <div
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center relative" // Consistent padding
+        className="py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
         style={{ backgroundImage: "url('/cta-background.jpg')" }} // Placeholder background image
       >
-        <div className="absolute inset-0 bg-neutral-900 opacity-90"></div>{" "}
-        {/* Increased opacity for contrast */}
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Ready to <span className="text-[#FF6600]">Elevate Your Brand</span>?
+        <div className="absolute inset-0 bg-white opacity-80"></div>
+        <div className="relative z-10 text-center text-black">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
+            Ready to Work<span className="text-[#FF6600]"> Together?</span>
           </h2>
-          <p className="mb-10 text-xl font-light max-w-2xl mx-auto">
-            {" "}
-            {/* Improved typography */}
-            Let's craft a story that resonates with your audience and delivers
-            measurable results.
+          <p className=" text-lg max-w-2xl mx-auto mb-10">
+            Let’s elevate your brand with strategic PR that delivers measurable results. Your success story starts here.
           </p>
-          <div className="flex justify-center flex-wrap gap-4">
-            {" "}
-            {/* Used flex-wrap for better mobile handling */}
-            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg uppercase tracking-wider min-w-[200px] hover:cursor-pointer">
-              {" "}
-              {/* Added min-width for button uniformity */}
-              Work with Us
+          <div className="flex justify-center gap-5">
+            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
+              Let's Talk
             </button>
-            <button className="text-[#FF6600] bg-transparent border-2 border-[#FF6600] font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition duration-300 shadow-lg uppercase tracking-wider min-w-[200px] hover:cursor-pointer">
+            <button className="text-[#FF6600] bg-transparent border-2 border-[#FF6600] font-bold py-3  px-8 rounded-full text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
               WhatsApp Us
             </button>
           </div>
