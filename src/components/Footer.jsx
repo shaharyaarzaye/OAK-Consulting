@@ -1,4 +1,4 @@
-import React from "react";
+import {IconBrandLinkedin , IconBrandX} from '@tabler/icons-react';
 import {Link} from "react-router-dom";
 // --- SVG Components (Reused from user input) ---
 
@@ -63,7 +63,7 @@ const FooterLink = ({ href, children }) => (
   <li>
     <Link
       href={href}
-      className="text-gray-300 hover:text-white inline-block hover:underline"
+      className="text-gray-300  hover:text-white flex items-center gap-1 hover:underline"
     >
       {children}
     </Link>
@@ -119,8 +119,8 @@ const ImageMatchFooter = () => {
               Follow
             </h4>
             <ul className="text-sm font-normal space-y-1">
-              <FooterLink href="#">LinkedIn</FooterLink>
-              <FooterLink href="#">Twitter</FooterLink>
+              <FooterLink href="#"><IconBrandLinkedin /> LinkedIn</FooterLink>
+              <FooterLink href="#"><IconBrandX/> Twitter</FooterLink>
             </ul>
           </div>
         </div>

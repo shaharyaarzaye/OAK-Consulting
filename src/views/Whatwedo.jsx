@@ -12,18 +12,53 @@ const flagData = [
   { name: "Turkey", src: "Turkey.jpg" },
   { name: "UAE", src: "UAE.jpg" },
 ];
+
+// 1. UPDATED servicesdata with descriptions
 const servicesdata = [
-  { name: "Community Management", src: "Community Management.JPG" },
+  {
+    name: "Community Management",
+    src: "Community Management.JPG",
+    description: "Connecting with audiences and fostering engagement.",
+  },
   {
     name: "Content Strategy & Creation",
     src: "Content Strategy & Creation.JPG",
+    description: "Crafting compelling stories that resonate across channels.",
   },
-  { name: "Crisis & Issues Management", src: "Crisis & Issues Management.JPG" },
-  { name: "Influencer Marketing", src: "Influencer Marketing.JPG" },
-  { name: "Media Management", src: "Media Management.JPG" },
-  { name: "Media Training", src: "Media Training.JPG" },
-  { name: "Product Launches", src: "Product Launches.JPG" },
-  { name: "Strategic Consultation", src: "Strategic Consultation.JPG" },
+  {
+    name: "Crisis & Issues Management",
+    src: "Crisis & Issues Management.JPG",
+    description:
+      "From rapid-response statements to full-scale crisis strategies.",
+  },
+  {
+    name: "Influencer Marketing",
+    src: "Influencer Marketing.JPG",
+    description:
+      "Leveraging authentic voices to amplify your message and reach.",
+  },
+  {
+    name: "Media Management",
+    src: "Media Management.JPG",
+    description:
+      "Building meaningful media relationships that amplify your voice.",
+  },
+  {
+    name: "Media Training",
+    src: "Media Training.JPG",
+    description:
+      "Preparing your team to communicate confidently in both Arabic and English.",
+  },
+  {
+    name: "Product Launches",
+    src: "Product Launches.JPG",
+    description: "Creating buzz, awareness, and lasting impact from day one.",
+  },
+  {
+    name: "Strategic Consultation",
+    src: "Strategic Consultation.JPG",
+    description: "Turning insights into action and results.",
+  },
 ];
 
 const primaryOrange = "text-[#FF6600]";
@@ -35,7 +70,7 @@ export default function WhatWeDo() {
       <div className="relative h-screen overflow-hidden">
         {/* Background Image */}
         <img
-          src="/Why_OAK.jpg" // Update path to be relative to public folder
+          src="/Why_OAK.jpg"
           alt="Oak Consulting Hero"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -48,26 +83,28 @@ export default function WhatWeDo() {
           <h1
             className="
               text-white 
-              text-3xl sm:text-4xl md:text-5xl lg:text-4xl 
+              text-3xl sm:text-4xl md:text-5xl lg:text-5xl 
               font-extrabold 
               leading-tight 
               mb-6 max-w-4xl
             "
           >
-            We don’t just manage communications.
-            <br /> we craft experiences
-            <br /> and deliver results that matter.
+            Managing Communications
+            <br /> <span className="text-[#ff6600]">We Craft Experiences</span>
           </h1>
+          <h2 className="text-xl text-white">We don’t just onboard clients, we build success stories</h2>
         </div>
       </div>
 
       {/* --- */}
 
-      {/* Services List Section: Now a single column with Disk Bullet Points */}
+      {/* Services List Section (Title only) */}
       <div className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
-          <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
+          <h2
+            className={`md:text-5xl text-3xl font-bold text-center text-gray-800`}
+          >
             Our <span className={primaryOrange}>Services</span>
           </h2>
           <div className="flex justify-center mt-3">
@@ -77,25 +114,7 @@ export default function WhatWeDo() {
       </div>
 
       {/* --- */}
-
-      {/* Grid Section (No change) */}
-      <div className="flex justify-evenly items-center gap-30 px-10 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          {servicesdata.map((img, index) => (
-            <div className="flex flex-col">
-              <img
-                key={index}
-                src={`services/${img.src}`} // Ensure these images are in the public folder
-                className="bg-zinc-800 h-full w-full rounded-lg transition-transform hover:scale-105"
-              />
-              <h1 className="mt-3 text-white bg-[#560001]">{img.name}</h1>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="bg-white py-12">
-        <div className="container mx-auto px-4 md:px-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 max-w-3xl mx-auto text-center">
+      <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-6 max-w-3xl mx-auto text-center">
             We are your brand’s communications command center, equipped to
             deliver end-to-end PR solutions:
           </h2>
@@ -103,64 +122,44 @@ export default function WhatWeDo() {
             We help brands shine, engage, and grow with tailored PR solutions:
           </p>
 
-          {/* UL Container for Single Column */}
-          <div className="max-w-3xl mx-auto">
-            <ul
-              className="
-      list-disc 
-      list-outside 
-      pl-6 
-      sm:pl-8 
-      text-lg 
-      text-gray-700
-      space-y-3 
-    "
+      {/* Grid Section with Hover Overlay for Service Names and Descriptions */}
+      <div className="flex justify-center items-center py-8 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center  ">
+          {servicesdata.map((service, index) => (
+            <div
+              key={index}
+              className="relative group w-full h-75 overflow-hidden rounded-lg shadow-xl cursor-pointer"
             >
-              <li className="font-medium">
-                Strategic Consultation – Turning insights into action and
-                results.
-              </li>
-              <li className="font-medium">
-                Media Management – Building meaningful media relationships that
-                amplify your voice.
-              </li>
-              <li className="font-medium">
-                Media Training – Preparing your team to communicate confidently
-                in both Arabic and English.
-              </li>
-              <li className="font-medium">
-                Crisis & Issues Management – From rapid-response statements to
-                full-scale crisis strategies.
-              </li>
-              <li className="font-medium">
-                Product Launches – Creating buzz, awareness, and lasting impact
-                from day one.
-              </li>
-              <li className="font-medium">
-                Content Strategy & Creation – Crafting compelling stories that
-                resonate across channels.
-              </li>
-              <li className="font-medium">
-                Community Management – Connecting with audiences and fostering
-                engagement.
-              </li>
-              <li className="font-medium">
-                Influencer Marketing – Leveraging authentic voices to amplify
-                your message and reach.
-              </li>
-            </ul>
-          </div>
+              <img
+                src={`services/${service.src}`}
+                alt={service.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* 2. UPDATED Overlay content to show both name and description */}
+              <div
+                className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center 
+                           opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4"
+              >
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {service.name}
+                </h3>
+                <p className="text-white text-sm px-2">
+                  {service.description} {/* Display the new description */}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       {/* === MOVING FLAGS SECTION === */}
-      <div className="relative w-full overflow-hidden border-b border-gray-300 bg-white py-10">
-        <h2 className="text-3xl font-bold text-center ">
-          Our <span className="text-[#ff6600]">Reach</span>
+      <div className="relative w-full md:h-screen  overflow-hidden  bg-white py-10">
+        <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
+          Our <span className={primaryOrange}>Reach</span>
         </h2>
         <div className="flex justify-center mt-3">
-          <div className="h-1 bg-[#ff6600] w-20"></div>
+          <div className="h-1 bg-[#ff6600] w-30"></div>
         </div>
-        <p className="text-justify px-25 my-15">
+        <p className="text-justify px-25 text-xl my-15">
           With a strategic presence across the Middle East, North Africa, and
           South Asia, OAK Consulting delivers comprehensive PR and
           communications solutions across diverse markets. Our regional
@@ -173,12 +172,9 @@ export default function WhatWeDo() {
           {[...flagData, ...flagData].map((flag, index) => (
             <div key={index} className="flex flex-col items-center">
               <img
-                // ✅ FIX: Prepended a path. Assumes flags are in a subfolder named 'flags' in 'public'
-                // If they are directly in 'public', use src={`/${flag.src}`}
                 src={`/flags/${flag.src}`}
                 alt={flag.name}
                 className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300"
-                // Added 'grayscale' class by default so hover effect works
               />
               <p className="text-sm text-gray-600 mt-2">{flag.name}</p>
             </div>
@@ -186,7 +182,7 @@ export default function WhatWeDo() {
         </div>
       </div>
       <div
-        className="flex flex-col h-screen items-center justify-center py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
+        className="flex flex-col h-screen items-center justify-center py-16 px-6 md:px-20 bg-cover bg-center relative "
         // Placeholder background image
       >
         <div className="absolute inset-0 bg-white opacity-80"></div>
@@ -198,10 +194,10 @@ export default function WhatWeDo() {
           <div className="flex justify-center mt-3">
             <div className="h-1 bg-[#ff6600] w-30"></div>
           </div>
-          <p className=" text-md mx-auto mt-5">
+          <p className=" text-md mx-auto leading-7 mt-12">
             Discover how our strategic PR solutions can elevate your brand and
-            drive real results. <br /> Explore our services and take the first step
-            toward your success story{" "}
+            drive real results. <br /> Explore our services and take the first
+            step toward your success story{" "}
           </p>
 
           <div className="flex justify-center gap-5 mt-10">

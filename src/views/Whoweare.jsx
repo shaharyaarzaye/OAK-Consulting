@@ -47,20 +47,36 @@ export default function Whoweare() {
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight">
             {" "}
             {/* Improved font sizes and added leading for better readability */}
-            Driving Impact, Building Brands – Why Choose Oak Consulting PR?
+            Driving Impact<br /> <span className='text-[#FF6600]'> Building Brands </span>
           </h1>
+          <h2 className='text-xl text-white mt-2'>Why Choose Oak Consulting PR?</h2>
         </div>
       </div>
 
+      <div className="py-20 px-4 sm:px-6 lg:px-8 ">
+        <div className="max-w-6xl mx-auto">
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <p className='text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5'>
+Established in 2004
+OAK Consulting is a young and dynamic Public Relations and Communications company headquartered in the UAE            </p>
+            <p  className='text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5'>
+              With decades of PR experience spanning the Middle East, India, Africa, and beyond, we have built a proven track record of delivering impactful communications strategies** for a diverse range of clients. Our growth has been driven entirely by the trust and recommendations of the organizations we work with, reflecting the long-lasting relationships we cultivate. 
+            </p>
+            <p className='text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5'>
+              While we are widely recognized as a specialist Tech PR agency, our expertise extends across lifestyle, consumer products, travel, tourism, and other sectors, enabling us to craft tailored campaigns that resonate with varied audiences. Our holistic approach, strategic insight, and dedication to measurable results have made us a trusted partner for brands looking to elevate their presence and tell their stories effectively.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
       {/* Main Content: Sections */}
       {/* Used standard px-4 sm:px-6 lg:px-8 for consistency, and max-w-7xl mx-auto for centering. */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Title */}
-          <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
+      <div className='md:h-screen flex flex-col justify-center items-center'>
+        <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
             Our <span className={primaryOrange}>Expertise</span>
           </h2>
           <div className="flex justify-center mt-3">
@@ -68,7 +84,7 @@ export default function Whoweare() {
           </div>
 
           {/* Section 1: Benefits Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20  px-15 ">
             {" "}
             {/* Increased gap for more breathing room */}
             {/* Card 1: Enhanced Brand Visibility and Online Presence */}
@@ -148,18 +164,19 @@ export default function Whoweare() {
               </div>
             </div>
           </div>
+      </div>
 
-          {/* Section 2: Commitments / Why Clients Choose Us */}
-          <div className="mt-20">
+      <div className='md:h-screen flex  flex-col justify-center items-center'>
+        <div className="px-10">
             {" "}
             {/* Increased top margin */}
-            <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
+            <h2 className={`md:text-5xl text-3xl font-bold text-center  `}>
               Our Commitment <span className={primaryOrange}>Your Brand</span>
             </h2>
             <div className="flex justify-center mt-3">
               <div className="h-1 bg-[#ff6600] w-30"></div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
               {" "}
               {/* Increased gap for better spacing */}
               {/* Card 1: In-Depth Market Knowledge - Changed bg-zinc-600 to white for consistency and adjusted text color */}
@@ -241,8 +258,19 @@ export default function Whoweare() {
               </div>
             </div>
           </div>
+      </div>
 
-          <p className="mt-16 text-xl text-gray-700 max-w-4xl mx-auto text-center font-medium">
+
+
+      <div className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Title */}
+          
+
+          {/* Section 2: Commitments / Why Clients Choose Us */}
+          
+
+          <p className=" text-xl text-gray-700 max-w-4xl mx-auto text-center font-medium">
             {" "}
             {/* Improved typography and centering */}
             At Oak Consulting, we don’t just manage PR, we craft strategies that
@@ -255,47 +283,48 @@ export default function Whoweare() {
       </div>
 
       {/* --- Team Section --- */}
-      <div className="bg-white border-t border-t-zinc-400 py-20 px-4 sm:px-6 lg:px-8">
-        {" "}
-        {/* Added light background and consistent padding */}
-        <div className="max-w-7xl mx-auto">
-          <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
-            Meet Our <span className={primaryOrange}> Team</span>
-          </h2>
-          <div className="flex justify-center mt-3">
-            <div className="h-1 bg-[#ff6600] w-30"></div>
-          </div>
-          <p className="text-center my-10">
-            A passionate team of PR and marketing professionals dedicated to
-            your success.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            {" "}
-            {/* Adjusted grid for more balanced layout and consistency */}
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="text-center group hover:-translate-y-2 transform transition duration-300 p-3 rounded-lg hover:bg-white" // Added hover background
-              >
-                <div className="relative overflow-hidden rounded-xl aspect-[4/5] mx-auto mb-4 shadow-lg group-hover:shadow-xl transition duration-300">
-                  {" "}
-                  {/* Used aspect ratio for uniform image size and added rounded-xl */}
-                  <img
-                    src={`/Team/${member.image}`}
-                    alt={member.name}
-                    className="w-full h-full object-cover" // Ensures image fills the container without distortion
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">
-                  {member.name}
-                </h3>{" "}
-                {/* Un-commented and styled name/role */}
-                <p className="text-sm text-gray-500">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+  <div className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    {/* Added light background and consistent padding */}
+    <div className="max-w-7xl mx-auto">
+      <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
+        Meet Our <span className={primaryOrange}> Team</span>
+      </h2>
+      <div className="flex justify-center mt-3">
+        <div className="h-1 bg-[#ff6600] w-30"></div>
       </div>
+      <p className="text-center my-5">
+        A passionate team of PR and marketing professionals dedicated to
+        your success.
+      </p>
+      
+      {/* Centering the entire row of items with flex and justify-center */}
+      <div className="flex flex-wrap justify-center gap-8 mt-15">
+        {" "}
+        {team.map((member, index) => (
+          <div
+            key={index}
+            // *** UPDATED CARD WIDTHS HERE ***
+            // Increased the width for all screen sizes to make the images bigger
+            className="text-center group hover:-translate-y-2 transform transition duration-300 p-3 rounded-lg hover:bg-white w-48 sm:w-56 lg:w-64"
+          >
+            {/* The image container fills the width of the card */}
+            <div className="relative overflow-hidden rounded-xl aspect-[4/5] mx-auto mb-4 shadow-lg group-hover:shadow-xl transition duration-300">
+              <img
+                src={`/Team/${member.image}`}
+                alt={member.name}
+                // The image itself is w-full h-full, so it scales with the parent div's width
+                className="w-full h-full object-cover" 
+              />
+            </div>
+            <h3 className="text-lg font-bold text-gray-900">
+              {member.name}
+            </h3>
+            <p className="text-sm text-gray-500">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 
       {/* --- CTA Section --- */}
       <div
@@ -311,7 +340,7 @@ export default function Whoweare() {
           <div className="flex justify-center mt-3">
             <div className="h-1 bg-[#ff6600] w-30"></div>
           </div>
-          <p className=" text-md mx-auto mt-5">
+          <p className=" text-md mx-auto my-10">
             Let's craft a story that resonates with your audience and delivers
             measurable results.Your success in our mission.
           </p>
