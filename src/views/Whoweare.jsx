@@ -1,10 +1,14 @@
+import { IconEye , IconTrendingUp , IconSpeakerphone , IconShieldHalfFilled , IconWorld , IconIkosaedr , IconBulb , IconBrandWechat , IconArrowRampRight , IconHeartHandshake } from '@tabler/icons-react';
+
 const team = [
-  { 
+  {
     // name: "Emily Roberts", role: "Founder & CEO",
-     image: "Image-1.jpeg" },
-  { 
-    // name: "Daniel Thompson", role: "Creative Director", 
-    image: "Image-2.jpeg" },
+    image: "Image-1.jpeg",
+  },
+  {
+    // name: "Daniel Thompson", role: "Creative Director",
+    image: "Image-2.jpeg",
+  },
   {
     // name: "Priya Nair",
     // role: "PR & Communications Lead",
@@ -56,21 +60,24 @@ export default function Whoweare() {
       <div className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
-          <h2 className={`md:text-5xl text-3xl font-bold text-center mb-12`}>
+          <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
             Our <span className={primaryOrange}>Expertise</span>
           </h2>
+          <div className="flex justify-center mt-3">
+            <div className="h-1 bg-[#ff6600] w-30"></div>
+          </div>
 
           {/* Section 1: Benefits Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
             {" "}
             {/* Increased gap for more breathing room */}
             {/* Card 1: Enhanced Brand Visibility and Online Presence */}
-              <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               {" "}
               {/* Added hover effect and rounded-xl */}
               <div className="flex items-start">
-                <div className="text-blue-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-eye"></i>
+                <div className="text-orange-500 text-3xl flex-shrink-0 mr-4 pt-1">
+                  <IconEye stroke={2} size={30}/>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -86,27 +93,29 @@ export default function Whoweare() {
               </div>
             </div>
             {/* Card 2: Sustained Positive Reputation */}
-             <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-start">
                 <div className="text-red-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-chart-line"></i>
+                  <IconTrendingUp stroke={2} size={30}/>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Business Growth & Sales
                   </h3>
+
                   <p className="text-gray-600">
-                   Our integrated PR and marketing strategy drive engagement, generate leads and convert visibility into tangible business results.
+                    Our integrated PR and marketing strategy drive engagement,
+                    generate leads and convert visibility into tangible business
+                    results.
                   </p>
                 </div>
               </div>
             </div>
-              
             {/* Card 3: Greater Brand Awareness */}
-              <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-start">
-                <div className="text-purple-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-bullhorn"></i>
+                <div className="text-orange-500 text-3xl flex-shrink-0 mr-4 pt-1">
+                  <IconSpeakerphone stroke={2} size={30}/>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -121,10 +130,10 @@ export default function Whoweare() {
               </div>
             </div>
             {/* Card 4: Business Growth and Sales Opportunities */}
-             <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-start">
-                <div className="text-green-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-shield-alt"></i>
+                <div className="text-orange-500 text-3xl flex-shrink-0 mr-4 pt-1">
+                  <IconShieldHalfFilled stroke={2} size={30}/>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -144,18 +153,21 @@ export default function Whoweare() {
           <div className="mt-20">
             {" "}
             {/* Increased top margin */}
-            <h2 className={`md:text-5xl text-3xl font-bold text-center mb-12`}>
+            <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
               Our Commitment <span className={primaryOrange}>Your Brand</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex justify-center mt-3">
+              <div className="h-1 bg-[#ff6600] w-30"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {" "}
               {/* Increased gap for better spacing */}
               {/* Card 1: In-Depth Market Knowledge - Changed bg-zinc-600 to white for consistency and adjusted text color */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-                <div className="text-indigo-600 text-4xl mb-4">
+                <div className="text-orange-500 text-4xl mb-4">
                   {" "}
                   {/* Increased margin-bottom */}
-                  <i className="fas fa-globe-africa"></i>
+                  <IconWorld stroke={2} size={30}/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   In-Depth Market Knowledge
@@ -168,8 +180,8 @@ export default function Whoweare() {
               </div>
               {/* Card 2: Structured Work Processes - Fixed text-gray-100 to text-gray-600 */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-                <div className="text-teal-600 text-4xl mb-4">
-                  <i className="fas fa-project-diagram"></i>
+                <div className="text-orange-500 text-4xl mb-4">
+                  <IconIkosaedr stroke={2} size={30}/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Structured Work Processes
@@ -181,8 +193,8 @@ export default function Whoweare() {
               </div>
               {/* Card 3: Proactive and Positive Attitude */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-                <div className="text-purple-600 text-4xl mb-4">
-                  <i className="far fa-lightbulb"></i>
+                <div className="text-orange-500 text-4xl mb-4">
+                  <IconBulb stroke={2} size={30}/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Proactive Attitude
@@ -193,8 +205,8 @@ export default function Whoweare() {
               </div>
               {/* Card 4: Aligned Communication Strategies */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-                <div className="text-yellow-600 text-4xl mb-4">
-                  <i className="fas fa-bullseye"></i>
+                <div className="text-orange-500 text-4xl mb-4">
+                  <IconBrandWechat stroke={2} size={30}/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Aligned Communication Strategies
@@ -206,7 +218,7 @@ export default function Whoweare() {
               {/* Card 5: Flexibility */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
                 <div className="text-orange-600 text-4xl mb-4">
-                  <i className="fas fa-compress-arrows-alt"></i>
+                  <IconArrowRampRight stroke={2} size={30}/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Flexibility
@@ -217,8 +229,8 @@ export default function Whoweare() {
               </div>
               {/* Card 6: Strong Media Relationships */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-                <div className="text-red-600 text-4xl mb-4">
-                  <i className="fas fa-handshake"></i>
+                <div className="text-orange-500 text-4xl mb-4">
+                  <IconHeartHandshake stroke={2} size={30}/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Strong Media Relationships
@@ -234,7 +246,10 @@ export default function Whoweare() {
             {" "}
             {/* Improved typography and centering */}
             At Oak Consulting, we don’t just manage PR, we craft strategies that
-            <span className="text-[#ff6600]">elevate your brand, build trust, and drive measurable growth.</span> 
+            <span className="text-[#ff6600]">
+              {" "}
+              elevate your brand, build trust, and drive measurable growth.
+            </span>
           </p>
         </div>
       </div>
@@ -244,11 +259,15 @@ export default function Whoweare() {
         {" "}
         {/* Added light background and consistent padding */}
         <div className="max-w-7xl mx-auto">
-          <h2 className={`md:text-5xl text-3xl font-bold text-center mb-2`}>
+          <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
             Meet Our <span className={primaryOrange}> Team</span>
           </h2>
-          <p className="text-center mb-10">
-            A passionate team of PR and marketing professionals dedicated to your success.
+          <div className="flex justify-center mt-3">
+            <div className="h-1 bg-[#ff6600] w-30"></div>
+          </div>
+          <p className="text-center my-10">
+            A passionate team of PR and marketing professionals dedicated to
+            your success.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {" "}
@@ -280,22 +299,28 @@ export default function Whoweare() {
 
       {/* --- CTA Section --- */}
       <div
-        className="py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
-        style={{ backgroundImage: "url('/cta-background.jpg')" }} // Placeholder background image
+        className="flex flex-col h-screen items-center justify-center py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
+        // Placeholder background image
       >
         <div className="absolute inset-0 bg-white opacity-80"></div>
         <div className="relative z-10 text-center text-black">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-            Ready to Work<span className="text-[#FF6600]"> Together?</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-3">
+            Ready to Work
+            <span className="text-[#FF6600]"> Together ?</span>
           </h2>
-          <p className=" text-lg max-w-2xl mx-auto mb-10">
-            Let’s elevate your brand with strategic PR that delivers measurable results. Your success story starts here.
+          <div className="flex justify-center mt-3">
+            <div className="h-1 bg-[#ff6600] w-30"></div>
+          </div>
+          <p className=" text-md mx-auto mt-5">
+            Let's craft a story that resonates with your audience and delivers
+            measurable results.Your success in our mission.
           </p>
-          <div className="flex justify-center gap-5">
-            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
-              Let's Talk
+
+          <div className="flex justify-center gap-5 mt-10">
+            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
+              Get Started
             </button>
-            <button className="text-[#FF6600] bg-transparent border-2 border-[#FF6600] font-bold py-3  px-8 rounded-full text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
+            <button className="text-green-500 bg-transparent border-1  font-bold py-3  px-8 rounded-full text-lg hover:bg-green-500 hover:text-white hover:border-black transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
               WhatsApp Us
             </button>
           </div>

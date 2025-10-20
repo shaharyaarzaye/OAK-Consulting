@@ -55,8 +55,7 @@ export default function WhatWeDo() {
             "
           >
             We don’t just manage communications.
-            <br /> we craft experiences.
-            <br /> shape perceptions.
+            <br /> we craft experiences
             <br /> and deliver results that matter.
           </h1>
         </div>
@@ -68,51 +67,11 @@ export default function WhatWeDo() {
       <div className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
-          <h2 className={`md:text-5xl text-3xl font-bold text-center mb-12`}>
+          <h2 className={`md:text-5xl text-3xl font-bold text-center `}>
             Our <span className={primaryOrange}>Services</span>
           </h2>
-
-          {/* Section 1: Benefits Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {" "}
-            {/* Increased gap for more breathing room */}
-            {/* Card 1: Enhanced Brand Visibility and Online Presence */}
-            <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-              {" "}
-              {/* Added hover effect and rounded-xl */}
-              <div className="flex items-start">
-                <div className="text-blue-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-eye"></i>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Possibilities{" "}
-                  </h3>{" "}
-                  {/* Increased margin-bottom */}
-                  <p className="text-gray-600">
-                    We believe in making things happen and turning bold ideas
-                    into measurable reality.
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* Card 2: Sustained Positive Reputation */}
-            <div className="bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center text-center shadow-md hover:shadow-xl transition duration-300">
-              <div className="flex items-start">
-                <div className="text-red-600 text-3xl flex-shrink-0 mr-4 pt-1">
-                  <i className="fas fa-chart-line"></i>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Passion{" "}
-                  </h3>
-                  <p className="text-gray-600">
-                    The driving force behind our success and unwavering
-                    commitment to our clients.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="flex justify-center mt-3">
+            <div className="h-1 bg-[#ff6600] w-30"></div>
           </div>
         </div>
       </div>
@@ -195,8 +154,13 @@ export default function WhatWeDo() {
       </div>
       {/* === MOVING FLAGS SECTION === */}
       <div className="relative w-full overflow-hidden border-b border-gray-300 bg-white py-10">
-        <h2 className="text-3xl font-bold text-center mb-6">Our reach</h2>
-        <p className="text-justify px-25 mb-15">
+        <h2 className="text-3xl font-bold text-center ">
+          Our <span className="text-[#ff6600]">Reach</span>
+        </h2>
+        <div className="flex justify-center mt-3">
+          <div className="h-1 bg-[#ff6600] w-20"></div>
+        </div>
+        <p className="text-justify px-25 my-15">
           With a strategic presence across the Middle East, North Africa, and
           South Asia, OAK Consulting delivers comprehensive PR and
           communications solutions across diverse markets. Our regional
@@ -222,26 +186,29 @@ export default function WhatWeDo() {
         </div>
       </div>
       <div
-        className="py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
-        style={{ backgroundImage: "url('/cta-background.jpg')" }} // Placeholder background image
+        className="flex flex-col h-screen items-center justify-center py-16 px-6 md:px-20 bg-cover bg-center relative border-t border-t-zinc-400"
+        // Placeholder background image
       >
         <div className="absolute inset-0 bg-white opacity-80"></div>
         <div className="relative z-10 text-center text-black">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-            Curious About{" "}
-            <span className="text-[#FF6600]">What We Can Do for You?</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-3">
+            Curious About
+            <span className="text-[#FF6600]"> What We Can Do for You ?</span>
           </h2>
-          <p className=" text-lg max-w-2xl mx-auto pb-10">
+          <div className="flex justify-center mt-3">
+            <div className="h-1 bg-[#ff6600] w-30"></div>
+          </div>
+          <p className=" text-md mx-auto mt-5">
             Discover how our strategic PR solutions can elevate your brand and
-            drive real results. Explore our services and take the first step
-            toward your success story.{" "}
+            drive real results. <br /> Explore our services and take the first step
+            toward your success story{" "}
           </p>
 
-          <div className="flex justify-center gap-5">
-            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
-              Let's Talk
+          <div className="flex justify-center gap-5 mt-10">
+            <button className="bg-[#FF6600] text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
+              Start Exploring
             </button>
-            <button className="text-[#FF6600] bg-transparent border-2 border-[#FF6600] font-bold py-3  px-8 rounded-full text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition duration-300 shadow-lg uppercase tracking-wider hover:cursor-pointer">
+            <button className="text-green-500 bg-transparent border-1  font-bold py-3  px-8 rounded-full text-lg hover:bg-green-500 hover:text-white hover:border-black transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
               WhatsApp Us
             </button>
           </div>

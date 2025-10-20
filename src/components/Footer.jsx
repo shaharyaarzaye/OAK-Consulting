@@ -109,7 +109,7 @@ const ImageMatchFooter = () => {
             <ul className="text-sm font-normal space-y-1">
               <FooterLink href="about">About</FooterLink>
               <FooterLink href="whoweare">Who we are</FooterLink>
-              <FooterLink href="whatwedo">What we do</FooterLink>
+              <FooterLink href="whatwedo">Our services</FooterLink>
             </ul>
           </div>
 
