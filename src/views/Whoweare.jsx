@@ -56,21 +56,7 @@ export default function Whoweare() {
         </div>
       </div>
 
-      <div className="py-20 px-4 sm:px-6 lg:px-8 ">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p className='text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5'>
-Established in 2004
-OAK Consulting is a young and dynamic Public Relations and Communications company headquartered in the UAE            </p>
-            <p  className='text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5'>
-              With decades of PR experience spanning the Middle East, India, Africa, and beyond, we have built a proven track record of delivering impactful communications strategies** for a diverse range of clients. Our growth has been driven entirely by the trust and recommendations of the organizations we work with, reflecting the long-lasting relationships we cultivate. 
-            </p>
-            <p className='text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5'>
-              While we are widely recognized as a specialist Tech PR agency, our expertise extends across lifestyle, consumer products, travel, tourism, and other sectors, enabling us to craft tailored campaigns that resonate with varied audiences. Our holistic approach, strategic insight, and dedication to measurable results have made us a trusted partner for brands looking to elevate their presence and tell their stories effectively.
-            </p>
-          </div>
-        </div>
-      </div>
+
 
 
       {/* Main Content: Sections */}

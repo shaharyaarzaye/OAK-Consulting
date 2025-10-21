@@ -135,7 +135,7 @@ function Home() {
       {/* Text content */}
       <div>
         {/* Title styled with the gold/orange color from the mockup */}
-        <h3 className={`text-xl font-bold mb-1 tracking-wide text-[#FF6600]`}>
+        <h3 className={`text-xl font-bold mb-4 tracking-wide text-[#FF6600]`}>
           {title}
         </h3>
         {/* Text color adjusted to match the gray text in the image */}
@@ -252,12 +252,12 @@ function Home() {
           <div className="flex justify-center mt-3">
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
-          <p className="text-center text-lg text-zinc-800 max-w-3xl mx-auto mt-3 mb-10">
+          <p className="text-center text-lg text-zinc-800 max-w-3xl mx-auto mt-13 mb-10">
             We are motivated by our clients success and guided by our core
             values:
           </p>
 
-          <div className="max-w-5xl mx-auto grid grid-cols-1 mt-15 md:grid-cols-3 gap-6 px-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 mt-15 md:grid-cols-3 gap-10 px-4">
             {/* Top Row: 3 Cards */}
             {valueItems.slice(0, 3).map((item, index) => (
               <ValueCard
@@ -269,7 +269,7 @@ function Home() {
             ))}
 
             {/* Bottom Row: 2 Centered Cards */}
-            <div className="md:col-span-3 flex flex-col md:flex-row justify-center gap-6 mt-0 md:mt-6">
+            <div className="md:col-span-3 flex max-w-5xl flex-col md:flex-row justify-center gap-10 mt-0 md:mt-6">
               {valueItems.slice(3, 5).map((item, index) => (
                 <ValueCard
                   key={`value-bottom-${index}`}
@@ -284,7 +284,7 @@ function Home() {
       </div>
 
       {/* === MOVING CLIENT LOGOS SECTION === */}
-      <div className="relative w-full overflow-hidden bg-white py-10">
+      <div className="relative w-full md:h-screen overflow-hidden bg-white py-10">
         <h2
           className={`md:text-5xl text-3xl font-bold text-center text-black mb-2`}
         >
@@ -294,10 +294,10 @@ function Home() {
         <div className="flex justify-center mt-3">
           <div className="h-1 bg-[#ff6600] w-[120px]"></div>
         </div>
-        <p className="text-center text-md mt-4 mb-10">
+        <p className="text-center text-md mt-14 mb-10">
           Partnering with world-class brands to deliver exceptional results.
         </p>
-        <div className="flex animate-scroll space-x-10 ">
+        <div className="flex animate-scroll space-x-10 mt-15 ">
           {[...clients, ...clients].map((client, index) => (
             <img
               key={index}

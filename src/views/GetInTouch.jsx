@@ -42,7 +42,7 @@ function GetInTouch() {
             Let's <span className="text-[#FF6600]"> Connect</span>
           </h1>
           <p className="mt-4 text-lg md:text-xl  mx-auto">
-            We're here to answer your questions and start a conversation about
+            We are here to answer your questions and start a conversation about
             your brand's future.
           </p>
         </div>
