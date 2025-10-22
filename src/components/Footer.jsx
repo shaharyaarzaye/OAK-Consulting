@@ -88,14 +88,14 @@ const ImageMatchFooter = () => {
 
             {/* Contact Details (Smaller, White) */}
             <div className="text-sm font-normal text-white space-y-1">
-              <p>Office 33, Floor 9,<br /> Business Towers,<br />Burjuman Mall</p>
+              <p>Office 33, Floor 9,<br /> Business Towers , Burjuman Mall <br /> Dubai, UAE</p> 
 
               <p>
                 <a
                   href="tel:+97141234567"
                   className="underline hover:text-gray-400"
                 >
-                  +971 4 123 4567
+                  +9771 50 156 0546
                 </a>
               </p>
             </div>

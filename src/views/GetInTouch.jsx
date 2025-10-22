@@ -94,7 +94,8 @@ function GetInTouch() {
                       Office 33, Floor 9,
                       <br /> Business Towers,
                       <br />
-                      Burjuman Mall
+                      Burjuman Mall <br />
+                      Dubai , UAE
                     </p>
                   </p>
                 </div>
@@ -147,7 +148,7 @@ function GetInTouch() {
                     href="tel:+97141234567"
                     className="text-blue-600 hover:underline"
                   >
-                    +971 4 123 4567
+                    +971 50 156 0546
                   </a>
                 </div>
               </div>
@@ -210,10 +211,13 @@ function GetInTouch() {
 
       {/* --- Map Section Added Below --- */}
       <div className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <h2 className="max-w-7xl mx-auto text-3xl font-bold text-gray-900 mb-6 px-0">
-          Find Our Location 📍
+        <h2 className="max-w-7xl mx-auto text-center text-3xl font-bold text-gray-900  px-0">
+          Find Our <sapn className="text-orange-500">Location</sapn> 📍
         </h2>
-        <div className="max-w-7xl mx-auto rounded-lg overflow-hidden shadow-xl border border-gray-200">
+        <div className="flex justify-center mt-3 mb-10">
+          <div className="h-1 bg-[#ff6600] w-30"></div>
+        </div>
+        <div className="max-w-5xl h-100 mx-auto rounded-lg overflow-hidden shadow-xl border border-gray-200">
           <iframe
             title="Office Location Map"
             src="https://maps.google.com/maps?q=Dubai%20Silicon%20Oasis,%20UAE&t=&z=14&ie=UTF8&iwloc=&output=embed"
