@@ -107,8 +107,8 @@ const ImageMatchFooter = () => {
               Our Work
             </h4>
             <ul className="text-sm font-normal space-y-1">
-              <FooterLink href="whoweare">Who we are</FooterLink>
-              <FooterLink href="whatwedo">Our services</FooterLink>
+              <FooterLink href="whoweare">Who We Are</FooterLink>
+              <FooterLink href="whatwedo">Our Services</FooterLink>
             </ul>
           </div>
 

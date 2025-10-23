@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 
 const flagData = [
   { name: "Bahrain", src: "Bahrain.jpg" },
@@ -13,7 +13,6 @@ const flagData = [
   { name: "UAE", src: "UAE.jpg" },
 ];
 
-// 1. UPDATED servicesdata with descriptions
 const servicesdata = [
   {
     name: "Community Management",
@@ -63,31 +62,122 @@ const servicesdata = [
 
 const primaryOrange = "text-[#FF6600]";
 
+// ==========================================================
+// SCROLL LOGIC INTEGRATION (5 Sections)
+// ==========================================================
+
 export default function WhatWeDo() {
+  const NUM_SECTIONS = 5;
+  const [currentSection, setCurrentSection] = useState(0);
+  const sectionRefs = useRef([]);
+  const isScrolling = useRef(false);
+  const isWaitingForInput = useRef(false);
+
+  // Initialize refs array
+  if (sectionRefs.current.length !== NUM_SECTIONS) {
+    sectionRefs.current = Array(NUM_SECTIONS)
+      .fill(0)
+      .map((_, i) => sectionRefs.current[i] || React.createRef());
+  }
+
+  const scrollToSection = useCallback((index) => {
+    if (sectionRefs.current[index] && sectionRefs.current[index].current) {
+      isScrolling.current = true;
+
+      window.scrollTo({
+        top: sectionRefs.current[index].current.offsetTop,
+        behavior: "smooth",
+      });
+
+      // Reset the smooth scroll lock after animation duration (1200ms)
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, 1200);
+    }
+  }, []);
+
+  useEffect(() => {
+    scrollToSection(currentSection);
+  }, [currentSection, scrollToSection]);
+
+  const handleWheel = useCallback(
+    (event) => {
+      const delta = event.deltaY;
+      const direction = delta > 0 ? 1 : -1;
+
+      // 🔥 CRITICAL FIX FOR FOOTER: Allow native scroll past the last section
+      if (direction > 0 && currentSection === NUM_SECTIONS - 1) {
+        return;
+      }
+
+      // Block native scroll for all controlled movements
+      event.preventDefault();
+
+      // Lock 1: Prevent section change while the smooth scroll animation is running
+      if (isScrolling.current) {
+        return;
+      }
+
+      // Lock 2: Prevent rapid successive inputs
+      if (isWaitingForInput.current) {
+        return;
+      }
+
+      // Check if the scroll input is large enough to register a section change
+      if (Math.abs(delta) < 10) {
+        return;
+      }
+
+      let newSection = currentSection + direction;
+
+      // Boundary Checks:
+      if (direction < 0 && currentSection === 0) {
+        // Allow native scroll above the first section
+        return;
+      }
+
+      // Only update section if it's within bounds
+      if (newSection >= 0 && newSection < NUM_SECTIONS) {
+        isWaitingForInput.current = true;
+        setCurrentSection(newSection);
+
+        // Reset the input lock after 800ms for a softer feel
+        setTimeout(() => {
+          isWaitingForInput.current = false;
+        }, 800);
+      }
+    },
+    [currentSection]
+  );
+
+  useEffect(() => {
+    // Attach the listener to the window/document to control the entire page scroll
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [handleWheel]);
+
+  // ==========================================================
+  // COMPONENT STRUCTURE (5 Sections with h-screen and ref)
+  // ==========================================================
+
   return (
-    <div>
-      {/* Hero Section (No change) */}
-      <div className="relative h-screen overflow-hidden">
-        {/* Background Image */}
+    <div id="scroll-container">
+      {/* 1. HERO SECTION (index 0) */}
+      <div
+        ref={sectionRefs.current[0]}
+        className="relative h-screen overflow-hidden"
+      >
+        {/* ... Hero Content ... */}
         <img
           src="/Why_OAK.jpg"
           alt="Oak Consulting Hero"
           className="absolute inset-0 h-full w-full object-cover"
         />
-
-        {/* Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/50" />
-
-        {/* Content Container */}
         <div className="relative flex flex-col items-center justify-center h-full text-center px-4 z-10">
-          <h1
-            className="
-              text-white 
-              text-4xl md:text-6xl font-extrabold 
-              leading-tight 
-              mb-6 max-w-4xl
-            "
-          >
+          <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight mb-6 max-w-4xl">
             Managing Communications
             <br /> <span className="text-[#ff6600]">Crafting Experiences</span>
           </h1>
@@ -97,10 +187,14 @@ export default function WhatWeDo() {
         </div>
       </div>
 
-      {/* --- */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8 md:h-screen ">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-6 text-lg  leading-relaxed">
+      {/* 2. ABOUT/STORY SECTION (index 1) */}
+      <div
+        ref={sectionRefs.current[1]}
+        className="h-screen flex justify-center items-center bg-white py-10 px-4 sm:px-6 lg:px-8"
+      >
+        {/* Removed overflow-y-auto, letting flex centering handle layout */}
+        <div className="max-w-6xl mx-auto py-8">
+          <div className="space-y-6 text-lg leading-relaxed">
             <p className="text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5">
               Established in 2004 OAK Consulting is a young and dynamic Public
               Relations and Communications company headquartered in the UAE{" "}
@@ -108,10 +202,10 @@ export default function WhatWeDo() {
             <p className="text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5">
               With decades of PR experience spanning the Middle East, India,
               Africa, and beyond, we have built a proven track record of
-              delivering impactful communications strategies for a diverse
-              range of clients. Our growth has been driven entirely by the trust
-              and recommendations of the organizations we work with, reflecting
-              the long-lasting relationships we cultivate.
+              delivering impactful communications strategies for a diverse range
+              of clients. Our growth has been driven entirely by the trust and
+              recommendations of the organizations we work with, reflecting the
+              long-lasting relationships we cultivate.
             </p>
             <p className="text-2xl md:text-2xl text-justify md:px-25 px-10 mt-5">
               While we are widely recognized as a specialist Tech PR agency, our
@@ -126,92 +220,98 @@ export default function WhatWeDo() {
         </div>
       </div>
 
-      {/* Services List Section (Title only) */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Title */}
-          <h2
-            className={`md:text-5xl text-3xl font-bold text-center text-gray-800`}
-          >
-            Our <span className={primaryOrange}>Services</span>
-          </h2>
-          <div className="flex justify-center mt-3">
-            <div className="h-1 bg-[#ff6600] w-30"></div>
+      {/* 3. SERVICES SECTION (index 2) - SCROLLBAR FIX APPLIED HERE */}
+      <div
+        ref={sectionRefs.current[2]}
+        className="h-screen flex flex-col justify-center bg-white p-4"
+      >
+        <div className="pt-4 pb-3 px-4 sm:px-6 lg:px-8 flex-shrink-0">
+          <div className="max-w-7xl mx-auto">
+            <h2
+              className={`md:text-5xl text-3xl font-bold text-center text-gray-800`}
+            >
+              Our <span className={primaryOrange}>Services</span>
+            </h2>
+            <div className="flex justify-center mt-3">
+              <div className="h-1 bg-[#ff6600] w-30"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Removed 'overflow-y-auto' from this wrapper to eliminate the nested scrollbar */}
+        <div className="flex justify-center flex-grow py-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center max-w-7xl px-4">
+            {/* The individual grid items' heights need to be flexible enough to avoid forcing overflow here. */}
+            {servicesdata.map((service, index) => (
+              <div
+                key={index}
+                className="relative group w-full h-55 overflow-hidden rounded-lg shadow-xl cursor-pointer"
+              >
+                <img
+                  src={`services/${service.src}`}
+                  alt={service.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-90 transition-opacity duration-500 p-4">
+                  <h3 className="text-white text-xl font-bold mb-2">
+                    {service.name}
+                  </h3>
+                  <p className="text-white text-sm px-2">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* --- */}
-      <h2 className="text-2xl md:text-md  mb-6  mx-auto text-center">
-        We are your brand’s communications command center, equipped to deliver
-        end-to-end PR solutions.
-      </h2>
-
-
-      {/* Grid Section with Hover Overlay for Service Names and Descriptions */}
-      <div className="flex justify-center items-center py-8 ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center  ">
-          {servicesdata.map((service, index) => (
-            <div
-              key={index}
-              className="relative group w-full h-75 overflow-hidden rounded-lg shadow-xl cursor-pointer"
-            >
-              <img
-                src={`services/${service.src}`}
-                alt={service.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              {/* 2. UPDATED Overlay content to show both name and description */}
-              <div
-                className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center 
-                           opacity-0 group-hover:opacity-90 transition-opacity duration-500 p-4"
-              >
-                <h3 className="text-white text-xl font-bold mb-2">
-                  {service.name}
-                </h3>
-                <p className="text-white text-sm px-2">
-                  {service.description} {/* Display the new description */}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* === MOVING FLAGS SECTION === */}
-      <div className="relative w-full md:h-screen flex  flex-col justify-center items-center overflow-hidden  bg-white py-10">
-        <h2 className={`md:text-5xl text-3xl font-bold text-center  mt-20`}>
-          Our <span className={primaryOrange}>Reach</span>
-        </h2>
-        <div className="flex justify-center mt-3">
-          <div className="h-1 bg-[#ff6600] w-30"></div>
-        </div>
-        <p className="text-2xl md:text-2xl text-justify px-25 text-xl my-15">
-          With a strategic presence across the Middle East, North Africa, and
-          South Asia, OAK Consulting delivers comprehensive PR and
-          communications solutions across diverse markets. Our regional
-          expertise spans the GCC countries, MENA region, and beyond, United
-          Arab Emirates to Saudi Arabia, Egypt to India, we bring deep market
-          insights and extensive media networks to amplify your brand's voice
-          across borders.
-        </p>
-        <div className="flex animate-scroll space-x-8">
-          {[...flagData, ...flagData].map((flag, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <img
-                src={`/flags/${flag.src}`}
-                alt={flag.name}
-                className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300"
-              />
-              <p className="text-sm text-gray-600 mt-2">{flag.name}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* 4. REACH (FLAGS) SECTION (index 3) */}
       <div
-        className="flex flex-col h-screen items-center  p-10 md:px-20 bg-cover bg-center relative "
-        // Placeholder background image
+        ref={sectionRefs.current[3]}
+        className="h-screen flex flex-col justify-center items-center bg-white p-10"
       >
-        <div className="relative p-10 z-10 text-center text-black">
+        <div className="flex flex-col items-center max-w-5xl w-full">
+          <h2 className={`md:text-5xl text-3xl font-bold text-center`}>
+            Our <span className={primaryOrange}>Reach</span>
+          </h2>
+          <div className="flex justify-center mt-3 mb-6">
+            <div className="h-1 bg-[#ff6600] w-30"></div>
+          </div>
+          <p className="text-xl text-center px-10 mb-10">
+            With a strategic presence across the Middle East, North Africa, and
+            South Asia, OAK Consulting delivers comprehensive PR and
+            communications solutions across diverse markets. Our regional
+            expertise spans the GCC countries, MENA region, and beyond.
+          </p>
+        </div>
+
+        {/* Flags Carousel */}
+        <div className="w-full overflow-hidden py-5 flex justify-center">
+          <div className="flex animate-scroll space-x-8">
+            {[...flagData, ...flagData].map((flag, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center flex-shrink-0"
+              >
+                <img
+                  src={`/flags/${flag.src}`}
+                  alt={flag.name}
+                  className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300"
+                />
+                <p className="text-sm text-gray-600 mt-2">{flag.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 5. FINAL CTA SECTION (index 4) */}
+      <div
+        ref={sectionRefs.current[4]}
+        className="h-screen flex flex-col justify-center items-center p-10 bg-cover bg-center "
+      >
+        <div className="relative p-10 z-10 text-center text-black max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-3">
             Curious About
             <span className="text-[#FF6600]"> What We Can Do for You ?</span>
@@ -225,11 +325,14 @@ export default function WhatWeDo() {
             step toward your success story.
           </p>
 
-          <div className="flex justify-center gap-5 mt-25">
-            <button className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
+          <div className="flex justify-center gap-5 mt-16">
+            <button className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg tracking-wider hover:cursor-pointer">
               Start Exploring
             </button>
-            <button className="text-green-500 bg-transparent border-1  font-bold py-3  px-8 rounded-full text-lg hover:bg-green-500 hover:text-white hover:border-black transition duration-300 shadow-lg  tracking-wider hover:cursor-pointer">
+            <button
+              onClick={() => window.open("https://wa.me/971501560546", "_blank")}
+              className="text-green-500 bg-transparent border border-green-500 font-bold py-3 px-8 rounded-full text-lg hover:bg-green-500 hover:text-white transition duration-300 shadow-lg tracking-wider hover:cursor-pointer"
+            >
               WhatsApp Us
             </button>
           </div>
