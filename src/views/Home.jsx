@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import  { Link} from 'react-router-dom'
 import {
   IconUserHeart,
   IconFriends,
@@ -17,7 +18,6 @@ function Home() {
     "sentinelone.jpg",
     "texub.jpg",
     "tenable.jpg",
-    "Temp.jpg",
     "ring.jpg",
     "proven.jpg",
     "omnix.jpg",
@@ -505,9 +505,9 @@ function Home() {
           </p>
 
           <div className="flex justify-center gap-5 mt-25">
-            <button className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg tracking-wider hover:cursor-pointer hover:text-orange-600 hover:bg-white hover:border-orange-600">
+            <Link to={'/getintouch'} className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg  transition duration-300 shadow-lg tracking-wider hover:cursor-pointer hover:text-orange-600 hover:bg-white hover:border hover:border-orange-600">
               Let's Talk
-            </button>
+            </Link>
             <button
               onClick={() =>
                 window.open("https://wa.me/971501560546", "_blank")

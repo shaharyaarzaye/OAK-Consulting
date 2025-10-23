@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-
+import {Link } from 'react-router-dom'
 const flagData = [
   { name: "Bahrain", src: "Bahrain.jpg" },
   { name: "Egypt", src: "Egypt.jpg" },
@@ -326,9 +326,9 @@ export default function WhatWeDo() {
           </p>
 
           <div className="flex justify-center gap-5 mt-16">
-            <button className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg tracking-wider hover:cursor-pointer">
+            <Link to={'/getintouch'} className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg  transition duration-300 shadow-lg tracking-wider hover:cursor-pointer hover:text-orange-600 hover:bg-white hover:border hover:border-orange-600">
               Start Exploring
-            </button>
+            </Link>
             <button
               onClick={() => window.open("https://wa.me/971501560546", "_blank")}
               className="text-green-500 bg-transparent border border-green-500 font-bold py-3 px-8 rounded-full text-lg hover:bg-green-500 hover:text-white transition duration-300 shadow-lg tracking-wider hover:cursor-pointer"
