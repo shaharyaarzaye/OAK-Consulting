@@ -505,7 +505,7 @@ function Home() {
           </p>
 
           <div className="flex justify-center gap-5 mt-25">
-            <button className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg tracking-wider hover:cursor-pointer">
+            <button className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-300 transition duration-300 shadow-lg tracking-wider hover:cursor-pointer hover:text-orange-600 hover:bg-white hover:border-orange-600">
               Let's Talk
             </button>
             <button
