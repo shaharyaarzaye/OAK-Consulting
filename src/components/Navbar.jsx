@@ -42,7 +42,7 @@ const Header = () => {
         <header className="absolute top-0 w-full z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-21">
                 {/* Logo */}
-                <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
+                <Link to="/" className="flex-shrink-0 text-lg" onClick={closeMenu}>
                     OAK <span className='text-orange-500'>Consulting</span>
                 </Link>
 
