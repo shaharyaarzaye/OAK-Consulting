@@ -243,7 +243,7 @@ export default function Whoweare() {
       
 
       {/* 4. TEAM SECTION (Index 3) */}
-      <div 
+      {/* <div 
         ref={sectionRefs.current[3]} 
         className="h-screen flex flex-col justify-center items-center bg-white py-20 px-4 sm:px-6 lg:px-8"
       >
@@ -275,7 +275,7 @@ export default function Whoweare() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
       
       {/* 5. CTA SECTION (Index 4) - The Last Controlled Section */}
       <div 

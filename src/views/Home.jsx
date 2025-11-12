@@ -395,7 +395,7 @@ function Home() {
       </div>
 
       {/* 6. TESTIMONIALS SECTION */}
-      <div
+      {/* <div
         ref={sectionRefs.current[5]}
         className="h-screen flex flex-col justify-center items-center bg-white p-4"
       >
@@ -427,7 +427,7 @@ function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* 7. AWARDS & RECOGNITION SECTION */}
       <div
@@ -466,7 +466,7 @@ function Home() {
                 </div>
               ))}
             </div>
-            <div className="grid md:grid-cols-2 gap-6 ">
+            {/* <div className="grid md:grid-cols-2 gap-6 ">
               <div className="w-full h-56 rounded-xl overflow-hidden shadow-2xl">
                 <img
                   src="Awards/image-1.jpeg"
@@ -481,7 +481,7 @@ function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
