@@ -190,7 +190,7 @@ export default function WhatWeDo() {
       {/* 2. ABOUT/STORY SECTION (index 1) */}
       <div
         ref={sectionRefs.current[1]}
-        className="h-screen flex justify-center items-center bg-white py-10 px-4 sm:px-6 lg:px-8"
+        className="h-screen flex justify-center items-center backgroud-color1 text-white py-10 px-4 sm:px-6 lg:px-8"
       >
         {/* Removed overflow-y-auto, letting flex centering handle layout */}
         <div className="max-w-6xl mx-auto py-8">
@@ -223,12 +223,12 @@ export default function WhatWeDo() {
       {/* 3. SERVICES SECTION (index 2) - SCROLLBAR FIX APPLIED HERE */}
       <div
         ref={sectionRefs.current[2]}
-        className="h-screen flex flex-col justify-center bg-white p-4"
+        className="h-screen flex flex-col justify-center backgroud-color2 p-4"
       >
         <div className="pt-4 pb-3 px-4 sm:px-6 lg:px-8 flex-shrink-0">
           <div className="max-w-7xl mx-auto">
             <h2
-              className={`md:text-5xl text-3xl font-bold text-center text-gray-800`}
+              className={`md:text-5xl text-3xl font-bold text-center text-white`}
             >
               Our <span className={primaryOrange}>Services</span>
             </h2>
@@ -239,8 +239,8 @@ export default function WhatWeDo() {
         </div>
 
         {/* Removed 'overflow-y-auto' from this wrapper to eliminate the nested scrollbar */}
-        <div className="flex justify-center flex-grow py-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center max-w-7xl px-4">
+        <div className="flex justify-center flex-grow py-5 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center max-w-7xl px-4 ">
             {/* The individual grid items' heights need to be flexible enough to avoid forcing overflow here. */}
             {servicesdata.map((service, index) => (
               <div
@@ -269,16 +269,16 @@ export default function WhatWeDo() {
       {/* 4. REACH (FLAGS) SECTION (index 3) */}
       <div
         ref={sectionRefs.current[3]}
-        className="h-screen flex flex-col justify-center items-center bg-white p-10"
+        className="h-screen flex flex-col justify-center items-center backgroud-color1 p-10"
       >
         <div className="flex flex-col items-center max-w-5xl w-full">
-          <h2 className={`md:text-5xl text-3xl font-bold text-center`}>
+          <h2 className={`md:text-5xl text-3xl font-bold text-center text-white`}>
             Our <span className={primaryOrange}>Reach</span>
           </h2>
           <div className="flex justify-center mt-3 mb-6">
             <div className="h-1 bg-[#ff6600] w-30"></div>
           </div>
-          <p className="text-xl text-center px-10 mb-10">
+          <p className="text-xl text-center px-10 mb-10 text-white">
             With a strategic presence across the Middle East, North Africa, and
             South Asia, OAK Consulting delivers comprehensive PR and
             communications solutions across diverse markets. Our regional
@@ -309,9 +309,9 @@ export default function WhatWeDo() {
       {/* 5. FINAL CTA SECTION (index 4) */}
       <div
         ref={sectionRefs.current[4]}
-        className="h-screen flex flex-col justify-center items-center p-10 bg-cover bg-center "
+        className="h-screen flex flex-col justify-center backgroud-color1 items-center p-10 bg-cover bg-center "
       >
-        <div className="relative p-10 z-10 text-center text-black max-w-4xl">
+        <div className="relative p-10 z-10 text-center text-white  max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-3">
             Curious About
             <span className="text-[#FF6600]"> What We Can Do for You ?</span>
@@ -331,7 +331,7 @@ export default function WhatWeDo() {
             </Link>
             <button
               onClick={() => window.open("https://wa.me/971501560546", "_blank")}
-              className="text-green-500 bg-transparent border border-green-500 font-bold py-3 px-8 rounded-full text-lg hover:bg-green-500 hover:text-white transition duration-300 shadow-lg tracking-wider hover:cursor-pointer"
+              className="text-green-500 bg-white border border-green-500 font-bold py-3 px-8 rounded-full text-lg hover:bg-green-500 hover:text-white transition duration-300 shadow-lg tracking-wider hover:cursor-pointer"
             >
               WhatsApp Us
             </button>

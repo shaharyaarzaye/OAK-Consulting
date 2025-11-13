@@ -172,7 +172,7 @@ function GetInTouch() {
         {/* 1. HERO SECTION (index 0) */}
         <div 
             ref={sectionRefs.current[0]}
-            className="relative h-screen bg-cover bg-center flex items-center justify-center"
+            className="relative h-screen bg-cover  bg-center flex items-center justify-center"
             style={{ backgroundImage: "url('Contact_us.JPG')" }}
         >
             <div className="absolute inset-0 bg-black/50"></div>
@@ -190,7 +190,7 @@ function GetInTouch() {
         {/* 2. CONTACT INFO & FORM SECTION (index 1) - Full Screen Centered */}
         <div 
             ref={sectionRefs.current[1]}
-            className="h-screen flex items-center justify-center bg-gray-50 p-4"
+            className="h-screen flex items-center justify-center backgroud-color1 p-4"
         >
             {/* The inner container is set to max-h-full and overflow-y-auto to gracefully handle small screen sizes without creating nested scrollbars unless absolutely necessary */}
             <div className="max-w-7xl mx-auto w-full max-h-full overflow-y-auto py-10 md:py-8">
@@ -198,10 +198,10 @@ function GetInTouch() {
                     {/* Left Column: Contact Information */}
                     <div className="space-y-8 p-4 lg:p-0">
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                            <h2 className="text-3xl font-bold text-white mb-4">
                                 Contact Information
                             </h2>
-                            <p className="text-gray-600">
+                            <p className="text-white">
                                 Reach out to us through any of the following channels. We look
                                 forward to hearing from you.
                             </p>
@@ -216,8 +216,8 @@ function GetInTouch() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-gray-800">Our Office</h4>
-                                    <p className="text-gray-600">
+                                    <h4 className="font-semibold text-white">Our Office</h4>
+                                    <p className="text-gray-50">
                                         Office 33, Floor 9,
                                         <br /> Business Towers,
                                         <br /> Burjuman Mall <br />
@@ -233,7 +233,7 @@ function GetInTouch() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-gray-800">Email Us</h4>
+                                    <h4 className="font-semibold text-white">Email Us</h4>
                                     <a
                                         href="mailto:contact@oakconsulting.com"
                                         className="text-blue-600 hover:underline"
@@ -250,7 +250,7 @@ function GetInTouch() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-gray-800">Call Us</h4>
+                                    <h4 className="font-semibold text-white">Call Us</h4>
                                     <a
                                         href="tel:+971501560546"
                                         className="text-blue-600 hover:underline"
@@ -263,8 +263,8 @@ function GetInTouch() {
                     </div>
 
                     {/* Right Column: Contact Form */}
-                    <div className="bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                    <div className="backgroud-color1 p-8 rounded-xl shadow-2xl border border-gray-100">
+                        <h3 className="text-2xl font-bold text-white mb-6">
                             Send us a message
                         </h3>
                         <form onSubmit={handleSubmit} className="space-y-5">
@@ -320,10 +320,10 @@ function GetInTouch() {
         {/* 3. MAP SECTION (index 2) - Full Screen Centered */}
         <div 
             ref={sectionRefs.current[2]}
-            className="h-screen flex flex-col justify-center items-center bg-white p-4 sm:p-6"
+            className="h-screen flex flex-col justify-center items-center backgroud-color2 p-4 sm:p-6"
         >
             <div className="max-w-7xl w-full text-center mb-8">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+                <h2 className="text-3xl md:text-5xl font-bold text-white">
                     Find Our <span className="text-orange-500">Location</span> 📍
                 </h2>
                 <div className="flex justify-center mt-3">

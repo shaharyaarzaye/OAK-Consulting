@@ -23,3 +23,10 @@
 .animate-scroll:hover {
   animation-play-state: paused; /* ✅ pauses scroll on hover */
 }
+
+.backgroud-color1 {
+    background-color: #b1b1b1;
+}
+.backgroud-color2 {
+    background-color: #565656;
+}

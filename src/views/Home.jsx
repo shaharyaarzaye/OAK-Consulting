@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import  { Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   IconUserHeart,
   IconFriends,
@@ -111,17 +111,17 @@ function Home() {
 
   // === 2. ValueCard Helper Component (Preserved) ===
   const ValueCard = ({ title, description, icon }) => (
-    <div className="p-6 h-full flex items-start bg-white rounded-xl border border-gray-200 shadow-sm transition duration-300 hover:shadow-lg text-black max-w-sm">
+    <div className="p-6 h-full flex items-start backgroud-color1 rounded-xl border border-gray-200 shadow-sm transition duration-300 hover:shadow-lg text-black max-w-sm">
       <div className="mr-4 mt-1 flex-shrink-0">
         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-orange-100 text-[#FF6600] text-2xl ">
           {icon}
         </div>
       </div>
       <div>
-        <h3 className={`text-xl font-bold mb-4 tracking-wide text-[#FF6600]`}>
+        <h3 className={`text-xl font-bold mb-4 tracking-wide text-black`}>
           {title}
         </h3>
-        <p className="text-md text-gray-700 leading-snug px-2">{description}</p>
+        <p className="text-md text-white leading-snug px-2">{description}</p>
       </div>
     </div>
   );
@@ -261,22 +261,22 @@ function Home() {
       {/* 2. ABOUT SECTION */}
       <div
         ref={sectionRefs.current[1]}
-        className="h-screen flex flex-col items-center bg-white p-10"
+        className="h-screen flex flex-col items-center backgroud-color1  p-10"
       >
-        <div className="py-10">
-          <h2 className="text-5xl font-bold text-center text-black">
+        <div className="pt-18 ">
+          <h2 className="text-5xl font-bold text-center text-white">
             We Make Things <span className="text-[#FF6600]">Happen</span>
           </h2>
           <div className="flex justify-center mt-3">
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
-          <p className="text-justify px-10 text-xl leading-9 mt-10 max-w-4xl mx-auto">
+          <p className="text-justify px-10 text-white text-xl leading-9 mt-10 max-w-4xl mx-auto">
             We are a team of creative and strategic thinkers with decades of PR
             and marketing experience. We don’t just execute campaigns – we craft
             stories that resonate, strategies that deliver results, and
             experiences that elevate brands.
           </p>
-          <p className="text-justify px-10 text-xl py-4 leading-9 my-5 max-w-4xl mx-auto">
+          <p className="text-justify px-10 text-white text-xl py-4 leading-9 my-5 max-w-4xl mx-auto">
             From technology to lifestyle, consumer products to travel, we bring
             professional expertise and a relentless focus on impact to every
             project, helping your business stand out in a crowded market.
@@ -287,10 +287,10 @@ function Home() {
       {/* 3. OUR MOTTO SECTION */}
       <div
         ref={sectionRefs.current[2]}
-        className="h-screen flex flex-col items-center bg-white p-10"
+        className="h-screen flex flex-col items-center backgroud-color2 text-white p-10"
       >
-        <div className="py-10">
-          <h2 className="md:text-5xl text-3xl font-bold text-center text-black">
+        <div className="py-18">
+          <h2 className="md:text-5xl text-3xl font-bold text-center ">
             Our <span className={primaryOrange}>Motto</span>
           </h2>
           <div className="flex justify-center mt-3 mb-10">
@@ -300,7 +300,7 @@ function Home() {
             {mottoItems.map((item, index) => (
               <div
                 key={`motto-${index}`}
-                className="p-6 flex flex-col justify-between bg-white rounded-xl border border-gray-200 shadow-sm text-black transition duration-300 hover:shadow-lg"
+                className="p-6 flex flex-col justify-between  rounded-xl border border-gray-200 shadow-sm text-black transition duration-300 hover:shadow-lg"
               >
                 <div className="mb-3">
                   <div className="w-10 h-10 flex items-center justify-center rounded-full bg-orange-100 text-[#FF6600] text-2xl ">
@@ -308,10 +308,10 @@ function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-1 tracking-wide text-black">
+                  <h3 className="text-xl font-bold mb-1 tracking-wide text-white">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-justify leading-6 text-zinc-800">
+                  <p className="text-sm text-justify leading-6 text-white">
                     {item.description}
                   </p>
                 </div>
@@ -324,18 +324,18 @@ function Home() {
       {/* 4. CORE VALUES SECTION */}
       <div
         ref={sectionRefs.current[3]}
-        className="h-screen flex flex-col justify-center items-center bg-white p-10"
+        className="h-screen flex flex-col justify-center items-center backgroud-color1 p-10"
       >
         <div className="py-2">
           <h2
-            className={`md:text-5xl text-3xl font-bold text-center text-black`}
+            className={`md:text-5xl text-3xl font-bold text-center text-white`}
           >
             What <span className={primaryOrange}>Drives Us</span>
           </h2>
           <div className="flex justify-center mt-2">
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
-          <p className="text-center text-xl text-zinc-800 max-w-3xl mx-auto mt-6 mb-10">
+          <p className="text-center text-xl text-white max-w-3xl mx-auto mt-6 mb-10">
             We are motivated by our clients success and guided by our core
             values:
           </p>
@@ -365,30 +365,33 @@ function Home() {
       {/* 5. CLIENT LOGOS SECTION */}
       <div
         ref={sectionRefs.current[4]}
-        className="h-screen flex flex-col justify-center items-center bg-white p-10"
+        className="h-screen flex flex-col justify-center items-center backgroud-color2 p-10"
       >
         <div className=" py-10">
           <h2
-            className={`md:text-5xl text-3xl font-bold text-center text-black mb-2`}
+            className={`md:text-5xl text-3xl font-bold text-center text-white mb-2`}
           >
             Trusted by <span className={primaryOrange}>Industry Leaders</span>
           </h2>
           <div className="flex justify-center mt-3">
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
-          <p className="text-center text-xl mt-6 mb-10">
+          <p className="text-center text-white text-xl mt-6 mb-10">
             Partnering with world-class brands to deliver exceptional results.
           </p>
-          <div className="relative w-full overflow-hidden">
-            <div className="flex animate-scroll space-x-10 mt-25">
-              {[...clients, ...clients].map((client, index) => (
-                <img
-                  key={index}
-                  src={`clients/${client}`}
-                  alt={client}
-                  className="h-16 w-auto object-contain hover:grayscale-100 transition duration-300"
-                />
-              ))}
+          <div className="relative bg-white w-full overflow-hidden">
+            <div className="flex items-center justify-center">
+              {/* Scrolling Logos Track */}
+              <div className="flex items-center animate-scroll py-10 space-x-10">
+                {[...clients, ...clients].map((client, index) => (
+                  <img
+                    key={index}
+                    src={`clients/${client}`}
+                    alt={client}
+                    className="h-16 w-auto object-contain hover:grayscale transition duration-300"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -432,11 +435,11 @@ function Home() {
       {/* 7. AWARDS & RECOGNITION SECTION */}
       <div
         ref={sectionRefs.current[6]}
-        className="h-screen flex flex-col justify-center items-center bg-white p-5"
+        className="h-screen flex flex-col justify-center items-center backgroud-color1 p-5"
       >
         <div className=" py-10">
           <h2
-            className={`md:text-5xl text-3xl font-bold text-center text-black `}
+            className={`md:text-5xl text-3xl font-bold text-center text-white `}
           >
             Awards & <span className={primaryOrange}>Recognition</span>
           </h2>
@@ -456,32 +459,42 @@ function Home() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-black leading-snug">
+                    <h3 className="font-bold text-lg text-white leading-snug">
                       {award.mainTitle}
                     </h3>
-                    <p className="text-sm text-gray-500 leading-snug">
+                    <p className="text-sm text-white leading-snug">
                       {award.subtitle}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            {/* <div className="grid md:grid-cols-2 gap-6 ">
-              <div className="w-full h-56 rounded-xl overflow-hidden shadow-2xl">
-                <img
-                  src="Awards/image-1.jpeg"
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+            <div className="grid md:grid-cols-2 gap-6 text-white ">
+              <div className="w-full h-56 rounded-xl overflow-hidden text-justify tracking-tight ">
+                <p>
+                  The GEC Awards celebrate excellence and innovation in the IT
+                  and tech industry across the Middle East, Africa, and Asia.
+                  Organized by GEC Media Group, the awards recognize leading
+                  companies, professionals and digital transformation
+                  initiatives that drive progress in technology, cybersecurity
+                  and enterprise solutions. Gaining a GEC award highlights
+                  outstanding performance, leadership and contribution to the
+                  regional tech ecosystem.
+                </p>
               </div>
-              <div className="w-full h-56 rounded-xl overflow-hidden shadow-2xl">
-                <img
-                  src="Awards/image-2.jpeg"
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-full h-56 rounded-xl overflow-hidden text-justify tracking-tight">
+                <p>
+                  The Forrester Research Honors organizations and leaders that
+                  demonstrate exceptional innovation, customer experience and
+                  digital transformation, guided by Forrester’s renowned
+                  research and industry insights. Recognized globally, these
+                  awards highlight companies that set new benchmarks in
+                  technology strategy, business impact and customer-centric
+                  growth making them a prestigious mark of excellence in the
+                  global business and tech landscape.
+                </p>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -489,9 +502,9 @@ function Home() {
       {/* 8. FINAL CTA SECTION (Section index 7) */}
       <div
         ref={sectionRefs.current[7]}
-        className="h-screen flex flex-col justify-center items-center bg-cover bg-center relative p-10"
+        className="h-screen flex flex-col backgroud-color2 justify-center items-center bg-cover bg-center relative p-10"
       >
-        <div className="relative z-10 text-center text-black p-10">
+        <div className="relative z-10 text-center text-white p-10">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-3">
             Ready to Elevate Your
             <span className="text-[#FF6600]"> Brand ?</span>
@@ -505,14 +518,17 @@ function Home() {
           </p>
 
           <div className="flex justify-center gap-5 mt-25">
-            <Link to={'/getintouch'} className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg  transition duration-300 shadow-lg tracking-wider hover:cursor-pointer hover:text-orange-600 hover:bg-white hover:border hover:border-orange-600">
+            <Link
+              to={"/getintouch"}
+              className="bg-[#FF6600] text-white font-bold py-3 px-8 rounded-full text-lg  transition duration-300 shadow-lg tracking-wider hover:cursor-pointer hover:text-orange-600 hover:bg-white hover:border hover:border-orange-600"
+            >
               Let's Talk
             </Link>
             <button
               onClick={() =>
                 window.open("https://wa.me/971501560546", "_blank")
               }
-              className="text-green-500 bg-transparent border border-green-500 font-bold py-3 px-8 rounded-full text-lg hover:bg-green-500 hover:text-white transition duration-300 shadow-lg tracking-wider hover:cursor-pointer"
+              className="text-green-500 bg-white border border-green-500 font-bold py-3 px-8 rounded-full text-lg hover:bg-green-500 hover:text-white transition duration-300 shadow-lg tracking-wider hover:cursor-pointer"
             >
               WhatsApp Us
             </button>
