@@ -180,7 +180,7 @@ export default function Whoweare() {
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-3xl flex-shrink-0 mr-4 pt-1"><IconSpeakerphone stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-bold  mb-2">Greater Brand Awareness</h3><p className=" text-justify">Targeted campaigns and storytelling initiatives increase awareness, helping your audience recognize and remember your brand.</p></div>
+              <div><h3 className="text-xl font-bold  mb-2">Greater Brand Awareness</h3><p className=" text-justify">The heart of our agency who bring their expertise, creative hats, and dedication to every project</p></div>
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-3xl flex-shrink-0 mr-4 pt-1"><IconShieldHalfFilled stroke={2} size={30} /></div>
@@ -197,7 +197,7 @@ export default function Whoweare() {
       >
         <div className="px-10 max-w-7xl mx-auto">
           <h2 className={`md:text-5xl text-white text-3xl font-bold text-center`}>
-            Our Commitment <span className={primaryOrange}>Your Brand</span>
+            Our Commitment<span className={primaryOrange}>, Your Brand</span>
           </h2>
 
           <div className="flex justify-center mt-3">
@@ -215,27 +215,27 @@ export default function Whoweare() {
             {/* Commitment Cards 1-6 */}
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start text-left shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-4xl mr-4 mt-1"><IconWorld stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-semibold text-white mb-2">In-Depth Market Knowledge</h3><p className="text-white text-justify">Expertise across the Middle East, Africa, and India.</p></div>
+              <div><h3 className="text-xl font-semibold text-white mb-2">In-Depth Market Knowledge</h3><p className="text-white text-justify">Expertise across the Middle East, Africa, and India</p></div>
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start text-left shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-4xl mr-4 mt-1"><IconIkosaedr stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-semibold text-white mb-2">Structured Work Processes</h3><p className="text-white text-justify">Methodical approaches that ensure efficiency and effectiveness.</p></div>
+              <div><h3 className="text-xl font-semibold text-white mb-2">Structured Work Processes</h3><p className="text-white text-justify">Methodical approaches that ensure efficiency and effectiveness</p></div>
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start text-left shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-4xl mr-4 mt-1"><IconBulb stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-semibold text-white mb-2">Proactive Attitude</h3><p className="text-white text-justify">Always anticipating challenges and opportunities.</p></div>
+              <div><h3 className="text-xl font-semibold text-white mb-2">Proactive Attitude</h3><p className="text-white text-justify">Always anticipating challenges and opportunities</p></div>
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start text-left shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-4xl mr-4 mt-1"><IconBrandWechat stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-semibold text-white mb-2">Communication Strategy</h3><p className="text-white text-justify">Tailored to your brand’s objectives and marketing goals.</p></div>
+              <div><h3 className="text-xl font-semibold text-white mb-2">Communication Strategy</h3><p className="text-white text-justify">Tailored to your brand's objectives and marketing goals</p></div>
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start text-left shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-600 text-4xl mr-4 mt-1"><IconArrowRampRight stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-semibold text-white mb-2">Flexibility</h3><p className="text-white text-justify">Adapting seamlessly to evolving client needs.</p></div>
+              <div><h3 className="text-xl font-semibold text-white mb-2">Flexibility</h3><p className="text-white text-justify">Adapting seamlessly to evolving client needs</p></div>
             </div>
             <div className=" p-6 rounded-xl border border-gray-200 flex items-start text-left shadow-md hover:shadow-xl transition duration-300">
               <div className="text-orange-500 text-4xl mr-4 mt-1"><IconHeartHandshake stroke={2} size={30} /></div>
-              <div><h3 className="text-xl font-semibold text-white mb-2">Strong Media Relationships</h3><p className="text-white text-justify">Leveraging our trusted connections to benefits.</p></div>
+              <div><h3 className="text-xl font-semibold text-white mb-2">Strong Media Relationships</h3><p className="text-white text-justify">Leveraging our trusted connections to benefits</p></div>
             </div>
           </div>
         </div>
@@ -292,7 +292,9 @@ export default function Whoweare() {
           </div>
           <p className=" text-md text-xl mx-auto my-10">
             Let's craft a story that resonates with your audience and delivers
-            measurable results.Your success in our mission.
+            measurable results.
+            <br />
+            Your success in our mission.
           </p>
 
           <div className="flex justify-center gap-5 mt-25">

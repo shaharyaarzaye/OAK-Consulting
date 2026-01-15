@@ -24,7 +24,7 @@ const Header = () => {
         { name: 'Who We Are', href: 'whoweare' },
         {
             name: 'Our Services',
-            href: 'whatwedo',
+            href: 'ourservices',
         
         }
     ];

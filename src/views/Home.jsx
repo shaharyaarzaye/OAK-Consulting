@@ -44,7 +44,7 @@ function Home() {
     {
       title: "People",
       description:
-        "The heart of our agency, bringing creativity, expertise, and dedication to every project.",
+        "The heart of our agency who bring their expertise, creative hats, and dedication to every project!",
       icon: <IconFriends stroke={2} />,
     },
     {
@@ -248,11 +248,10 @@ function Home() {
               Shaping Stories{" "}
             </h1>
             <h1 className="text-4xl md:text-6xl text-[#FF6600] mt-3 font-extrabold tracking-tight">
-              Building Brands
+              Building Reputation
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-              Turning ideas into stories that resonate, influence, and transform
-              brands
+              Turning brand messages into memorable stories that resonate, influence and strengthen their reputation.
             </p>
           </div>
         </div>
@@ -271,15 +270,10 @@ function Home() {
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
           <p className="text-justify px-10 text-white text-xl leading-9 mt-10 max-w-4xl mx-auto">
-            We are a team of creative and strategic thinkers with decades of PR
-            and marketing experience. We don’t just execute campaigns – we craft
-            stories that resonate, strategies that deliver results, and
-            experiences that elevate brands.
+            We are a team of creative and strategic thinkers with decades of PR and marketing experience. We don't just execute campaigns - we bring stories to life, to the right audience and build sustained strategies that deliver impact for the brands, elevating them from the rest of the crowd.
           </p>
           <p className="text-justify px-10 text-white text-xl py-4 leading-9 my-5 max-w-4xl mx-auto">
-            From technology to lifestyle, consumer products to travel, we bring
-            professional expertise and a relentless focus on impact to every
-            project, helping your business stand out in a crowded market.
+            Backed by a can-do mindset, we think critically, challenge the brief, and deliver more than promised. As your extended team, we partner with you to build and grow your brand.
           </p>
         </div>
       </div>

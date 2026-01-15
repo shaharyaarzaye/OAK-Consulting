@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Home from './views/Home';
-import Whatwedo from './views/Whatwedo';
+import OurServices from './views/OurServices';
 import Whoweare from './views/Whoweare';
 import OurClients from './views/OurClients';
 import OurTeam from './views/OurTeam'
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/whoweare" element={<Whoweare />} />
-          <Route path="/whatwedo" element={<Whatwedo />} />
+          <Route path="/ourservices" element={<OurServices />} />
           <Route path="/clients" element={<OurClients />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/getintouch" element={<GetInTouch />} />
