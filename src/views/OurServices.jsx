@@ -60,12 +60,12 @@ const servicesdata = [
   },
   {
     name: "Thought Leadership",
-    src: "Thought Leadership.JPG",
+    src: "Thought_Leadership.jpg",
     description: "Build visibility and voice in the industry.",
   },
   {
     name: "Media Monitoring",
-    src: "Media Monitoring.JPG",
+    src: "Media_Monitoring.jpg",
     description: "Stay updated with the latest mentions of your brand and sectorial happenings.",
   },
 ];
