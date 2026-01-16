@@ -197,7 +197,7 @@ export default function Whoweare() {
       >
         <div className="px-10 max-w-7xl mx-auto">
           <h2 className={`md:text-5xl text-white text-3xl font-bold text-center`}>
-            Our Commitment<span className={primaryOrange}>, Your Brand</span>
+            Our Commitment,<span className={primaryOrange}>Your Brand</span>
           </h2>
 
           <div className="flex justify-center mt-3">
