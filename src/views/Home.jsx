@@ -330,8 +330,7 @@ function Home() {
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
           <p className="text-center text-xl text-white max-w-3xl mx-auto mt-6 mb-10">
-            We are motivated by our clients success and guided by our core
-            values:
+          We are motivated by our clients success, and guided by our core values:
           </p>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
             {valueItems.slice(0, 3).map((item, index) => (
@@ -371,7 +370,7 @@ function Home() {
             <div className="h-1 bg-[#ff6600] w-[120px]"></div>
           </div>
           <p className="text-center text-white text-xl mt-6 mb-10">
-            Partnering with world-class brands to deliver exceptional results.
+          Partnering with world-class brands to deliver exceptional results
           </p>
           <div className="relative bg-white w-full overflow-hidden">
             <div className="flex items-center justify-center">
