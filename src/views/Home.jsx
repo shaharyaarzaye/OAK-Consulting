@@ -276,32 +276,38 @@ function Home() {
       </div>
 
       {/* 6. AWARDS & RECOGNITION SECTION */}
-      <div ref={sectionRefs.current[5]} className="h-screen flex flex-col justify-center items-center backgroud-color1 p-5">
-        <div className="py-10">
-          <h2 className="md:text-5xl text-3xl font-bold text-center text-white ">Awards & <span className={primaryOrange}>Recognition</span></h2>
-          <div className="flex justify-center mt-3"><div className="h-1 bg-[#ff6600] w-[120px]"></div></div>
-          
-          <div className="max-w-6xl mx-auto mt-10 px-4 overflow-y-auto max-h-[70vh] custom-scrollbar">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {awardItems.map((award, index) => (
-                <div key={index} className="p-5 flex flex-col rounded-xl border border-zinc-300 text-black shadow-sm bg-white/5 backdrop-blur-sm">
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full text-black text-2xl ring-2 ring-yellow-500/30 bg-orange-100 flex-shrink-0 mr-3">
-                      {award.icon}
-                    </div>
-                    <h3 className="font-bold text-lg text-white leading-tight">
-                      {award.mainTitle}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-zinc-300 leading-relaxed text-justify">
-                    {award.subtitle}
-                  </p>
-                </div>
-              ))}
+<div ref={sectionRefs.current[5]} className="h-screen flex flex-col justify-center items-center backgroud-color1 p-5">
+  <div className="py-10 w-full">
+    <h2 className="md:text-5xl text-3xl font-bold text-center text-white ">
+      Awards & <span className={primaryOrange}>Recognition</span>
+    </h2>
+    <div className="flex justify-center mt-3"><div className="h-1 bg-[#ff6600] w-[120px]"></div></div>
+    
+    {/* Scrollbar hidden via 'scrollbar-hide' class */}
+    <div className="max-w-6xl mx-auto mt-10 px-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
+      <div className="flex flex-wrap justify-center gap-6">
+        {awardItems.map((award, index) => (
+          <div 
+            key={index} 
+            className="p-5 flex flex-col rounded-xl border border-zinc-300 text-black shadow-sm bg-white/5 backdrop-blur-sm w-full md:w-[calc(33.333%-1.5rem)] min-w-[300px]"
+          >
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full text-black text-2xl ring-2 ring-yellow-500/30 bg-orange-100 flex-shrink-0 mr-3">
+                {award.icon}
+              </div>
+              <h3 className="font-bold text-lg text-white leading-tight">
+                {award.mainTitle}
+              </h3>
             </div>
+            <p className="text-sm text-zinc-300 leading-relaxed text-justify">
+              {award.subtitle}
+            </p>
           </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
 
       {/* 7. FINAL CTA SECTION */}
       <div ref={sectionRefs.current[6]} className="h-screen flex flex-col backgroud-color2 justify-center items-center relative p-10">
